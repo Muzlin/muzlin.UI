@@ -29,23 +29,6 @@
     }
   </style>
   <style>
-    .mz-button {
-      height: var(--button-height);
-      font-size: var(--font-size);
-      background: var(--button-bg);
-      border-radius: var(--border-radius);
-      border: 1px solid var(--border-color);
-      padding: 0 1em;
-    }
-
-    .mz-button:hover {
-      background: var(--button-bg-active);
-      border: 1px solid var(--border-color-hover);
-    }
-
-    .mz-button:focus {
-      outline: none;
-    }
   </style>
 </head>
 
@@ -53,17 +36,7 @@
   <div id="app">
     <mz-button></mz-button>
   </div>
-  <script src="./node_modules/vue/dist/vue.min.js"></script>
-  <script src="./button.js"></script>
-  <script>
-    new Vue({
-      el: '#app',
-      data() {
-        return {
-        }
-      }
-    })
-  </script>
+  <script src="./src/app.js"></script>
 </body>
 
 </html>
