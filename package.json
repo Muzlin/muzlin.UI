@@ -1,0 +1,23 @@
+{
+  "name": "muzlin.ui",
+  "version": "0.0.1",
+  "description": "基于VUE2.X的UI组件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muzlin/muzlin.UI.git"
+  },
+  "keywords": [
+    "VUE",
+    "UI"
+  ],
+  "author": "李霖",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Muzlin/muzlin.UI/issues"
+  },
+  "homepage": "https://github.com/Muzlin/muzlin.UI#readme"
+}
