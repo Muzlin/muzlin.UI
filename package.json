@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Muzlin/muzlin.UI/issues"
   },
-  "homepage": "https://github.com/Muzlin/muzlin.UI#readme"
+  "homepage": "https://github.com/Muzlin/muzlin.UI#readme",
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
 }
