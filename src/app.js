@@ -17,6 +17,8 @@ new Vue({
 
 // 单元测试
 import chai from 'chai'
+import spies from 'chai-spies'
+chai.use(spies)
 const expect = chai.expect
 {
   // vue构造器构造一个函数
@@ -77,11 +79,12 @@ const expect = chai.expect
       icon: 'good'
     }
   }).$mount()
-  mzButton.$on('click', function(){
-    expect(1).to.eq(1)
-  })
+  // 间谍函数
+  let spy = chai.spy(function(){})
+  mzButton.$on('click', spy)
   let button = mzButton.$el
   button.click()
+  expect(spy).to.have.been.called()
   mzButton.$el.remove()
   mzButton.$destroy()
 }
