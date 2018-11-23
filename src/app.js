@@ -5,5 +5,10 @@ Vue.component('mz-button', Button)
 Vue.component('mz-icon', Icon)
 
 new Vue({
-  el: '#app'
+  el: '#app',
+  data(){
+    return {
+      loading: false
+    }
+  }
 })

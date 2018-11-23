@@ -38,13 +38,13 @@
 
 <body>
   <div id="app">
-    <mz-button icon="upload" position="right">
+    <mz-button icon="upload" position="right" :loading="loading" @click="loading = !loading">
       按钮
     </mz-button>
     <mz-button icon="download" position="right">
       按钮
     </mz-button>
-    <mz-button icon="good" position="left">
+    <mz-button icon="good" position="left" loading>
       按钮
     </mz-button>
   </div>

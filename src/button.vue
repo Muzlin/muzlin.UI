@@ -1,7 +1,7 @@
 <template>
-  <button class="mz-button" :class="{[`icon-${position}`]: true}">
-    <mz-icon class="icon" v-if="icon" :name="icon"></mz-icon>
-    <mz-icon class="icon loading" v-if="icon" name="loading"></mz-icon>
+  <button class="mz-button" :class="{[`icon-${position}`]: true}" @click="$emit('click')">
+    <mz-icon class="icon" v-if="icon && !loading" :name="icon"></mz-icon>
+    <mz-icon class="icon loading" v-if="loading" name="loading"></mz-icon>
     <slot></slot>
   </button>
 </template>
@@ -19,6 +19,10 @@
         validator(value) {
           return value === 'left' || value === 'right'
         }
+      },
+      loading: {
+        type: Boolean,
+        default: false
       }
     }
   }
@@ -62,7 +66,7 @@
     }
 
     .loading {
-      animation: spin 2s infinite linear;
+      animation: spin 1.5s infinite linear;
     }
   }
 </style>
