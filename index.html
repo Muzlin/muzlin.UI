@@ -38,15 +38,31 @@
 
 <body>
   <div id="app">
-    <mz-button icon="upload" position="right" :loading="loading" @click="loading = !loading">
-      按钮
-    </mz-button>
-    <mz-button icon="download" position="right">
-      按钮
-    </mz-button>
-    <mz-button icon="good" position="left" loading>
-      按钮
-    </mz-button>
+    <div>
+      <mz-button icon="upload" position="right" :loading="loading" @click="loading = !loading">
+        按钮
+      </mz-button>
+      <mz-button icon="download" position="right">
+        按钮
+      </mz-button>
+      <mz-button icon="good" position="left" loading>
+        按钮
+      </mz-button>
+    </div>
+    <div>
+      <mz-button-group>
+        <div class=""></div>
+        <mz-button icon="left" position="left">
+          上一页
+        </mz-button>
+        <mz-button>
+          更多
+        </mz-button>
+        <mz-button icon="right" position="right">
+          下一页
+        </mz-button>
+      </mz-button-group>
+    </div>
   </div>
   <script src="./src/app.js"></script>
   <script src="//at.alicdn.com/t/font_921500_oo4ec96mbfq.js"></script>

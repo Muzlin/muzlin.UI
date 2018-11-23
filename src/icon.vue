@@ -6,9 +6,6 @@
 <script>
   export default {
     name: 'mz-icon',
-    created () {
-      console.log(this.name)
-    },
     props: {
       name: {
         type: String

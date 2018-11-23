@@ -7,17 +7,17 @@
 </template>
 <script>
   export default {
-    name: 'mz-button',
+    name: "mz-button",
     props: {
       icon: {
         type: String
       },
       position: {
         type: String,
-        default: 'left',
+        default: "left",
         // 属性检查器
         validator(value) {
-          return value === 'left' || value === 'right'
+          return value === "left" || value === "right";
         }
       },
       loading: {
@@ -25,13 +25,19 @@
         default: false
       }
     }
-  }
+  };
 </script>
 <style lang="scss" scoped>
   @keyframes spin {
-    0% { transform: rotate(0deg) }
-    100% { transform: rotate(360deg) }
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
   }
+
   .mz-button {
     height: var(--button-height);
     font-size: var(--font-size);
@@ -56,13 +62,13 @@
     &.icon-right {
       >.icon {
         order: 2;
-        margin-left: .3em;
+        margin-left: 0.3em;
         margin-right: 0;
       }
     }
 
     .icon {
-      margin-right: .3em;
+      margin-right: 0.3em;
     }
 
     .loading {
