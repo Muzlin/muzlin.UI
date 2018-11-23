@@ -1,6 +1,7 @@
 <template>
   <button class="mz-button" :class="{[`icon-${position}`]: true}">
     <mz-icon class="icon" v-if="icon" :name="icon"></mz-icon>
+    <mz-icon class="icon loading" v-if="icon" name="loading"></mz-icon>
     <slot></slot>
   </button>
 </template>
@@ -23,6 +24,10 @@
   }
 </script>
 <style lang="scss" scoped>
+  @keyframes spin {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+  }
   .mz-button {
     height: var(--button-height);
     font-size: var(--font-size);
@@ -54,6 +59,10 @@
 
     .icon {
       margin-right: .3em;
+    }
+
+    .loading {
+      animation: spin 2s infinite linear;
     }
   }
 </style>
