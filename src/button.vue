@@ -6,8 +6,13 @@
   </button>
 </template>
 <script>
+  import Vue from 'vue'
+  import Icon from './icon.vue'
   export default {
     name: "mz-button",
+    components: {
+      'mz-icon': Icon
+    },
     props: {
       icon: {
         type: String

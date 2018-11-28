@@ -4,7 +4,8 @@
   "description": "基于VUE2.X的 UI框架",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev-test": "parcel watch test/* --no-cache & karma start",
+    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   "homepage": "https://github.com/Muzlin/muzlin.UI#readme",
   "dependencies": {
     "node-sass": "^4.10.0",
+    "v": "^0.3.0",
     "vue": "^2.5.17",
     "vue-hot-reload-api": "^2.3.1"
   },
