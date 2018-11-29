@@ -1,10 +1,12 @@
 import Vue from 'vue'
+import svg from './svg'
 import Button from './button.vue'
 import Icon from './icon.vue'
 import ButtonGroup from './button-group.vue'
 Vue.component('mz-button', Button)
 Vue.component('mz-icon', Icon)
 Vue.component('mz-button-group', ButtonGroup)
+Vue.use(svg)
 
 new Vue({
   el: '#app',

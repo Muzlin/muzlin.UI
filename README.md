@@ -1,19 +1,33 @@
 # Muzlin.UI - 基于VUE2.X的 UI框架
 
-
-[![NpmLicense](https://img.shields.io/npm/l/muzlin.ui.svg)](https://github.com/Muzlin/muzlin.UI/blob/master/LICENSE)
-
-![npm](https://img.shields.io/npm/v/muzlin.ui.svg)
-
-[![Build Status](https://travis-ci.org/Muzlin/muzlin.UI.svg?branch=master)](https://travis-ci.org/Muzlin/muzlin.UI)
+<!-- 图标 -->
+[![NpmLicense](https://img.shields.io/npm/l/muzlin.ui.svg)](https://github.com/Muzlin/muzlin.UI/blob/master/LICENSE) ![npm](https://img.shields.io/npm/v/muzlin.ui.svg) [![Build Status](https://travis-ci.org/Muzlin/muzlin.UI.svg?branch=master)](https://travis-ci.org/Muzlin/muzlin.UI)
 
 ## 介绍
 
 ## 开始使用
 
-1. 安装
-```建议使用 border-box```
+1. 开启 border-box
+    ```
+    建(bi)议(xu)使用 border-box -- IE8以上的浏览器都支持
+    ```
+2. 安装 muzlin.ui
+    ```
+    npm i muzlin.ui
+    ```
+3. 引入 muzlin.ui
+    ```
+    import { Button, ButtonGroup, Icon } from 'muzlin.UI'
+    import 'muzlin.ui/dist/index.css'
 
+    export default {
+      name: 'app',
+      components: {
+        'mz-button': Button,
+        'mz-icon': Icon
+      }
+    }
+    ```
 
 ## 文档
 
