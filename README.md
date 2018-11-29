@@ -1,7 +1,8 @@
 # Muzlin.UI - 基于VUE2.X的 UI框架
 
 <!-- 图标 -->
-[![NpmLicense](https://img.shields.io/npm/l/muzlin.ui.svg)](https://github.com/Muzlin/muzlin.UI/blob/master/LICENSE) ![npm](https://img.shields.io/npm/v/muzlin.ui.svg) [![Build Status](https://travis-ci.org/Muzlin/muzlin.UI.svg?branch=master)](https://travis-ci.org/Muzlin/muzlin.UI)
+[![Build Status](https://travis-ci.org/Muzlin/muzlin.UI.svg?branch=master)](https://travis-ci.org/Muzlin/muzlin.UI) [![npm](https://img.shields.io/npm/dm/muzlin.ui.svg)](https://npmcharts.com/compare/muzlin.ui?minimal=true) [![NpmLicense](https://img.shields.io/npm/l/muzlin.ui.svg)](https://github.com/Muzlin/muzlin.UI/blob/master/LICENSE) ![npm](https://img.shields.io/npm/v/muzlin.ui.svg)
+
 
 ## 介绍
 
