@@ -38,30 +38,10 @@
 
 <body>
   <div id="app">
-    <div>
-      <mz-button icon="upload" position="right" :loading="loading" @click="loading = !loading">
-        按钮
-      </mz-button>
-      <mz-button icon="download" position="right">
-        按钮
-      </mz-button>
-      <mz-button icon="good" position="left" loading>
-        按钮
-      </mz-button>
-    </div>
-    <div>
-      <mz-button-group>
-        <mz-button icon="left" position="left">
-          上一页
-        </mz-button>
-        <mz-button>
-          更多
-        </mz-button>
-        <mz-button icon="right" position="right">
-          下一页
-        </mz-button>
-      </mz-button-group>
-    </div>
+    <mz-input value="正常"></mz-input>
+    <mz-input value="禁用" disabled></mz-input>
+    <mz-input value="只读" readonly></mz-input>
+    <mz-input value="错误" error="错误信息"></mz-input>
   </div>
   <script src="./src/app.js"></script>
   <!-- <script src="//at.alicdn.com/t/font_921500_oo4ec96mbfq.js"></script> -->
