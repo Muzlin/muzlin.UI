@@ -38,7 +38,8 @@
 
 <body>
   <div id="app">
-    <mz-input value="正常" @change="inputChange" @blur="inputBlur"></mz-input>
+    <mz-input v-model="inputValue" @change="inputChange" @blur="inputBlur"></mz-input>
+    {{inputValue}}
     <mz-input value="禁用" disabled></mz-input>
     <mz-input value="只读" readonly></mz-input>
     <mz-input value="错误" error="错误信息"></mz-input>

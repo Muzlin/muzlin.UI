@@ -12,7 +12,8 @@ new Vue({
   el: '#app',
   data() {
     return {
-      loading: false
+      loading: false,
+      inputValue: ''
     }
   },
   methods: {

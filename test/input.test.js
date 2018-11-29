@@ -50,10 +50,14 @@ describe('Input 组件单元测试', () => {
     const callback = sinon.fake()
     let event
     afterEach(() => {
+      // 给target 上添加一个value
+      Object.defineProperty(
+        event, 'target', { value: { value: 'hi' }, enumerable: true}
+      )
       let inputElement = vm.$el.querySelector('input')
       inputElement.dispatchEvent(event)
-      // 期待回调函数被调用 并且传出event事件
-      expect(callback).to.have.calledWith(event)
+      // 期待回调函数被调用 并且传出value
+      expect(callback).to.have.calledWith('hi')
     })
     it('支持change事件', () => {
       vm.$on('change', callback)
