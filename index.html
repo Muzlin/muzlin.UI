@@ -38,13 +38,12 @@
 
 <body>
   <div id="app">
-    <mz-input value="正常"></mz-input>
+    <mz-input value="正常" @change="inputChange" @blur="inputBlur"></mz-input>
     <mz-input value="禁用" disabled></mz-input>
     <mz-input value="只读" readonly></mz-input>
     <mz-input value="错误" error="错误信息"></mz-input>
   </div>
   <script src="./src/app.js"></script>
-  <!-- <script src="//at.alicdn.com/t/font_921500_oo4ec96mbfq.js"></script> -->
 </body>
 
 </html>

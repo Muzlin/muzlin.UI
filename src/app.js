@@ -14,5 +14,13 @@ new Vue({
     return {
       loading: false
     }
+  },
+  methods: {
+    inputChange(e) {
+      console.log(e)
+    },
+    inputBlur(e){
+      console.log(e)
+    }
   }
 })
