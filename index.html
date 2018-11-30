@@ -29,12 +29,23 @@
     }
   </style>
   <style>
+    .row {
+      display: flex;
+    }
+
     .icon {
       width: 1em;
       height: 1em;
     }
-    section{
+
+    section {
       margin-bottom: 20px;
+    }
+
+    .col {
+      height: 40px;
+      background-color: aquamarine;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
@@ -42,17 +53,40 @@
 <body>
   <div id="app">
     <section>
+      <mz-row>
+        <mz-col class="col" :span="12">12</mz-col>
+        <mz-col class="col" :span="12">12</mz-col>
+      </mz-row>
+      <mz-row>
+        <mz-col class="col" :span="6">6</mz-col>
+        <mz-col class="col" :span="6">6</mz-col>
+        <mz-col class="col" :span="6">6</mz-col>
+        <mz-col class="col" :span="6">6</mz-col>
+      </mz-row>
+      <mz-row>
+        <mz-col class="col" :span="8">8</mz-col>
+        <mz-col class="col" :span="8">8</mz-col>
+        <mz-col class="col" :span="8">8</mz-col>
+      </mz-row>
+      <mz-row>
+        <mz-col class="col" :span="2">2</mz-col>
+        <mz-col class="col" :span="22">22</mz-col>
+      </mz-row>
+    </section>
+    <section>
       <mz-button>无图标</mz-button>
       <mz-button icon="setting">设置</mz-button>
       <mz-button icon="setting" position="right">设置</mz-button>
       <mz-button icon="setting" loading>加载</mz-button>
       <mz-button icon="setting" loading position="right">加载</mz-button>
     </section>
-    <mz-input v-model="inputValue" @change="inputChange" @blur="inputBlur"></mz-input>
-    {{inputValue}}
-    <mz-input value="禁用" disabled></mz-input>
-    <mz-input value="只读" readonly></mz-input>
-    <mz-input value="错误" error="错误信息"></mz-input>
+    <section>
+      <mz-input v-model="inputValue" @change="inputChange" @blur="inputBlur"></mz-input>
+      {{inputValue}}
+      <mz-input value="禁用" disabled></mz-input>
+      <mz-input value="只读" readonly></mz-input>
+      <mz-input value="错误" error="错误信息"></mz-input>
+    </section>
   </div>
   <script src="./src/app.js"></script>
 </body>
