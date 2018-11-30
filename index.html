@@ -33,11 +33,21 @@
       width: 1em;
       height: 1em;
     }
+    section{
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 
 <body>
   <div id="app">
+    <section>
+      <mz-button>无图标</mz-button>
+      <mz-button icon="setting">设置</mz-button>
+      <mz-button icon="setting" position="right">设置</mz-button>
+      <mz-button icon="setting" loading>加载</mz-button>
+      <mz-button icon="setting" loading position="right">加载</mz-button>
+    </section>
     <mz-input v-model="inputValue" @change="inputChange" @blur="inputBlur"></mz-input>
     {{inputValue}}
     <mz-input value="禁用" disabled></mz-input>

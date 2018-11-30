@@ -84,6 +84,7 @@
     &.error {
       >input {
         border: 1px solid $error-color;
+        color: $error-color;
       }
     }
 
