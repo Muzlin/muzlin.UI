@@ -49,14 +49,16 @@
       justify-content: center;
       margin-bottom: 1px;
     }
-    .bg1{
+
+    .bg1 {
       background: #7FBDE8;
     }
-    .bg2{
+
+    .bg2 {
       background: #1F90E6;
     }
 
-    #app{
+    #app {
       border: 1px solid;
     }
   </style>
@@ -65,24 +67,46 @@
 <body>
   <div id="app">
     <section>
+      <mz-row>
+        <mz-col :span="10" offset="2">
+          <div class="col bg1">12</div>
+        </mz-col>
+        <mz-col :span="12">
+          <div class="col bg2">12</div>
+        </mz-col>
+      </mz-row>
+      <mz-row :gutter="14">
+        <mz-col :span="6">
+          <div class="col bg1">6</div>
+        </mz-col>
+        <mz-col :span="6">
+          <div class="col bg2">6</div>
+        </mz-col>
+        <mz-col :span="6">
+          <div class="col bg1">6</div>
+        </mz-col>
+        <mz-col :span="6">
+          <div class="col bg2">6</div>
+        </mz-col>
+      </mz-row>
       <mz-row gutter="4">
-        <mz-col class="col bg1" :span="12">12</mz-col>
-        <mz-col class="col bg2" :span="12">12</mz-col>
-      </mz-row>
-      <mz-row :gutter="4">
-        <mz-col class="col bg1" :span="6">6</mz-col>
-        <mz-col class="col bg2" :span="6">6</mz-col>
-        <mz-col class="col bg1" :span="6">6</mz-col>
-        <mz-col class="col bg2" :span="6">6</mz-col>
-      </mz-row>
-      <mz-row>
-        <mz-col class="col bg1" :span="8">8</mz-col>
-        <mz-col class="col bg2" :span="8">8</mz-col>
-        <mz-col class="col bg1" :span="8">8</mz-col>
+        <mz-col :span="8">
+          <div class="col bg1">8</div>
+        </mz-col>
+        <mz-col :span="8">
+          <div class="col bg2">8</div>
+        </mz-col>
+        <mz-col :span="8">
+          <div class="col bg1">8</div>
+        </mz-col>
       </mz-row>
       <mz-row>
-        <mz-col class="col bg1" :span="2">2</mz-col>
-        <mz-col class="col bg2" :span="20">22</mz-col>
+        <mz-col :span="24">
+          <div class="col bg1">24</div>
+        </mz-col>
+        <mz-col :span="24">
+          <div class="col bg2">24</div>
+        </mz-col>
       </mz-row>
     </section>
     <section>
