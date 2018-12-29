@@ -24,7 +24,7 @@ new Vue({
     inputChange(e) {
       console.log(e)
     },
-    inputBlur(e){
+    inputBlur(e) {
       console.log(e)
     }
   }
