@@ -61,61 +61,36 @@
     #app {
       border: 1px solid;
     }
+
+    .demo {
+      background: #ccc;
+      border: 1px solid;
+      height: 50px;
+    }
   </style>
 </head>
 
 <body>
   <div id="app">
     <section>
-      <mz-row align="center" gutter="1">
-        <mz-col :span="6"
-        :phone="{ span: 24 }"
-        :pad="{ span: 10 }"
-        :narrowPc="{ span: 8 }"
-        :pc="{ span: 12 }"
-        :widePc="{ span: 12 }">
-          <div class="col bg1">--</div>
-        </mz-col>
-        <mz-col :span="18"
-        :phone="{ span: 24 }"
-        :pad="{ span: 14 }"
-        :narrowPc="{ span: 16 }"
-        :pc="{ span: 12 }"
-        :widePc="{ span: 12 }">
-            <div class="col bg2">--</div>
-          </mz-col>
-      </mz-row>
-      <mz-row :gutter="14">
-        <mz-col :span="6">
-          <div class="col bg1">6</div>
-        </mz-col>
-        <mz-col :span="6">
-          <div class="col bg2">6</div>
-        </mz-col>
-        <mz-col :span="6">
-          <div class="col bg1">6</div>
-        </mz-col>
-        <mz-col :span="6">
-          <div class="col bg2">6</div>
-        </mz-col>
-      </mz-row>
-      <mz-row gutter="4">
-        <mz-col :span="8">
-          <div class="col bg1">8</div>
-        </mz-col>
-        <mz-col :span="8">
-          <div class="col bg2">8</div>
-        </mz-col>
-        <mz-col :span="8">
-          <div class="col bg1">8</div>
-        </mz-col>
-      </mz-row>
       <mz-row>
-        <mz-col :span="24">
-          <div class="col bg1">24</div>
+        <mz-col span="24" :pad="{ span: 12 }" :narrow-pc="{ span: 8 }" :pc="{ span: 6 }" :wide-pc="{ span: 4 }">
+          <div class="demo"></div>
         </mz-col>
-        <mz-col :span="24">
-          <div class="col bg2">24</div>
+        <mz-col span="24" :pad="{ span: 12 }" :narrow-pc="{ span: 8 }" :pc="{ span: 6 }" :wide-pc="{ span: 4 }">
+          <div class="demo"></div>
+        </mz-col>
+        <mz-col span="24" :pad="{ span: 12 }" :narrow-pc="{ span: 8 }" :pc="{ span: 6 }" :wide-pc="{ span: 4 }">
+          <div class="demo"></div>
+        </mz-col>
+        <mz-col span="24" :pad="{ span: 12 }" :narrow-pc="{ span: 8 }" :pc="{ span: 6 }" :wide-pc="{ span: 4 }">
+          <div class="demo"></div>
+        </mz-col>
+        <mz-col span="24" :pad="{ span: 12 }" :narrow-pc="{ span: 8 }" :pc="{ span: 6 }" :wide-pc="{ span: 4 }">
+          <div class="demo"></div>
+        </mz-col>
+        <mz-col span="24" :pad="{ span: 12 }" :narrow-pc="{ span: 8 }" :pc="{ span: 6 }" :wide-pc="{ span: 4 }">
+          <div class="demo"></div>
         </mz-col>
       </mz-row>
     </section>
