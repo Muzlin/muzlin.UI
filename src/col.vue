@@ -22,16 +22,11 @@
     },
     computed: {
       colClass() {
-        let {
-          span,
-          offset
-        } = this
+        let { span, offset } = this
         return [span && `col-${span}`, offset && `offset-${offset}`]
       },
       colStyle() {
-        let {
-          gutter
-        } = this
+        let { gutter } = this
         return {
           padding: `0 ${gutter/2}px`
         }

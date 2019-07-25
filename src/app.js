@@ -22,10 +22,10 @@ new Vue({
   },
   methods: {
     inputChange(e) {
-      console.log(e)
+			console.log("​inputChange -> e", e)
     },
     inputBlur(e) {
-      console.log(e)
+			console.log("​inputBlur -> e", e)
     }
   }
 })
