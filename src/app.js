@@ -10,6 +10,7 @@ import Header from './header'
 import Footer from './footer'
 import Sider from './sider'
 import Content from './content'
+import Toast from './toast'
 Vue.component('mz-button', Button)
 Vue.component('mz-icon', Icon)
 Vue.component('mz-button-group', ButtonGroup)
@@ -21,6 +22,10 @@ Vue.component('mz-header', Header)
 Vue.component('mz-footer', Footer)
 Vue.component('mz-sider', Sider)
 Vue.component('mz-content', Content)
+Vue.component('mz-toast', Toast)
+
+import plugin from './plugin'
+Vue.use(plugin)
 
 
 new Vue({
@@ -30,6 +35,9 @@ new Vue({
       loading: false,
       inputValue: ''
     }
+  },
+  mounted () {
+    this.$toast('hi')
   },
   methods: {
     inputChange(e) {
