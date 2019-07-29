@@ -1,5 +1,5 @@
 <template>
-  <div :class="colClass" :style="colStyle">
+  <div class="col" :class="colClass" :style="colStyle">
     <slot></slot>
   </div>
 </template>
@@ -18,8 +18,7 @@
     name: 'mz-col',
     props: {
       span: {
-        type: [Number, String],
-        default: 0
+        type: [Number, String]
       },
       offset: {
         type: [Number, String]
@@ -49,8 +48,8 @@
     methods: {
       createClasses(obj, str = '') {
         let array = []
-        obj.span && array.push(`col-${str}${obj.span}`)
-        obj.offset && array.push(`offset-${str}${obj.offset}`)
+        obj && obj.span && array.push(`col-${str}${obj.span}`)
+        obj && obj.offset && array.push(`offset-${str}${obj.offset}`)
         return array
       }
     },
@@ -66,9 +65,7 @@
         ]
       },
       colStyle() {
-        let {
-          gutter
-        } = this
+        let { gutter } = this
         return {
           padding: `0 ${gutter/2}px`
         }
