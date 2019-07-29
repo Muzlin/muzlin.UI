@@ -25,7 +25,7 @@
     }
 
     #app {
-      margin: 0 20px;
+      /* margin: 0 20px; */
     }
   </style>
   <style>
@@ -35,6 +35,10 @@
       height: 100px;
       width: 100%;
     }
+    .sider{
+      border: 1px solid;
+      width: 200px;
+    }
   </style>
 </head>
 
@@ -42,7 +46,7 @@
   <div id="app">
     <section>
       <mz-layout style="height: 100vh;border: 1px solid;">
-        <mz-sider>sider</mz-sider>
+        <mz-sider class="sider">sider</mz-sider>
         <mz-layout>
           <mz-header class="demo">header</mz-header>
           <mz-content class="demo">content</mz-content>
