@@ -25,39 +25,15 @@
     }
 
     #app {
-      margin: 20px;
+      margin: 0 20px;
     }
   </style>
   <style>
-    .row {
-      display: flex;
-    }
-
-    .icon {
-      width: 1em;
-      height: 1em;
-    }
-
-    section {
-      margin-bottom: 20px;
-    }
-
-    .bg1 {
-      background: #7FBDE8;
-    }
-
-    .bg2 {
-      background: #1F90E6;
-    }
-
-    #app {
-      border: 1px solid;
-    }
-
     .demo {
       background: #ccc;
       border: 1px solid;
-      height: 50px;
+      height: 100px;
+      width: 100%;
     }
   </style>
 </head>
@@ -65,40 +41,14 @@
 <body>
   <div id="app">
     <section>
-      <mz-row>
-        <mz-col span="24" :pad="{ span: 12 }" :narrow-pc="{ span: 8 }" :pc="{ span: 6 }" :wide-pc="{ span: 4 }">
-          <div class="demo"></div>
-        </mz-col>
-        <mz-col span="24" :pad="{ span: 12 }" :narrow-pc="{ span: 8 }" :pc="{ span: 6 }" :wide-pc="{ span: 4 }">
-          <div class="demo"></div>
-        </mz-col>
-        <mz-col span="24" :pad="{ span: 12 }" :narrow-pc="{ span: 8 }" :pc="{ span: 6 }" :wide-pc="{ span: 4 }">
-          <div class="demo"></div>
-        </mz-col>
-        <mz-col span="24" :pad="{ span: 12 }" :narrow-pc="{ span: 8 }" :pc="{ span: 6 }" :wide-pc="{ span: 4 }">
-          <div class="demo"></div>
-        </mz-col>
-        <mz-col span="24" :pad="{ span: 12 }" :narrow-pc="{ span: 8 }" :pc="{ span: 6 }" :wide-pc="{ span: 4 }">
-          <div class="demo"></div>
-        </mz-col>
-        <mz-col span="24" :pad="{ span: 12 }" :narrow-pc="{ span: 8 }" :pc="{ span: 6 }" :wide-pc="{ span: 4 }">
-          <div class="demo"></div>
-        </mz-col>
-      </mz-row>
-    </section>
-    <section>
-      <mz-button>无图标</mz-button>
-      <mz-button icon="setting">设置</mz-button>
-      <mz-button icon="setting" position="right">设置</mz-button>
-      <mz-button icon="setting" loading>加载</mz-button>
-      <mz-button icon="setting" loading position="right">加载</mz-button>
-    </section>
-    <section>
-      <mz-input v-model="inputValue" @change="inputChange" @blur="inputBlur"></mz-input>
-      {{inputValue}}
-      <mz-input value="禁用" disabled></mz-input>
-      <mz-input value="只读" readonly></mz-input>
-      <mz-input value="错误" error="错误信息"></mz-input>
+      <mz-layout style="height: 100vh;border: 1px solid;">
+        <mz-sider>sider</mz-sider>
+        <mz-layout>
+          <mz-header class="demo">header</mz-header>
+          <mz-content class="demo">content</mz-content>
+          <mz-footer class="demo">footer</mz-footer>
+        </mz-layout>
+      </mz-layout>
     </section>
   </div>
   <script src="./src/app.js"></script>
