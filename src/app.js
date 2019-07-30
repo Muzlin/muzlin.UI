@@ -36,25 +36,28 @@ new Vue({
       inputValue: ''
     }
   },
-  mounted () {
-    this.$toast('hi<b>我是加粗的字体</b>,很多文字很多文字很多文字很多文字', {
-      enableHtml: true,
-      duration: 0,
-      position: 'middle',
-      closeButton: {
-        text: '知道啦',
-        callBack() {
-          console.log('closed')
-        }
-      }
-    })
+  mounted() {
+
   },
   methods: {
     inputChange(e) {
-			console.log("​inputChange -> e", e)
+      console.log("​inputChange -> e", e)
     },
     inputBlur(e) {
-			console.log("​inputBlur -> e", e)
+      console.log("​inputBlur -> e", e)
+    },
+    alertToast() {
+      this.$toast(`hi<b>我是加粗的字体</b>,很多文字很多文字很多文字很多文字-${Math.random()}`, {
+        enableHtml: true,
+        duration: 0,
+        position: 'middle',
+        closeButton: {
+          text: '知道啦',
+          callBack() {
+            console.log('closed')
+          }
+        }
+      })
     }
   }
 })
