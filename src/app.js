@@ -50,7 +50,7 @@ new Vue({
       this.$toast(`hi<b>我是加粗的字体</b>,很多文字很多文字很多文字很多文字-${Math.random()}`, {
         enableHtml: true,
         duration: 0,
-        position: 'middle',
+        position: 'bottom',
         closeButton: {
           text: '知道啦',
           callBack() {
