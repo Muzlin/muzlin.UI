@@ -7,7 +7,8 @@ export default {
         propsData: {
           closeButton: toastOptions.closeButton,
           enableHtml: toastOptions.enableHtml,
-          duration: toastOptions.duration
+          duration: toastOptions.duration,
+          position: toastOptions.position
         }
       })
       // slots 赋值要放在mount前面
