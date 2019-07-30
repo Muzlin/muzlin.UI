@@ -1,14 +1,18 @@
 <template>
   <div class="toast" ref="toast">
-    <div v-if="enableHtml" v-html="$slots.default[0]"></div>
-    <slot v-else></slot>
+    <div class="message">
+      <div v-if="enableHtml" v-html="$slots.default[0]"></div>
+      <slot v-else></slot>
+    </div>
     <div class="line" ref="line"></div>
     <div class="close" ref="text" v-if="closeButton" @click="onClickClose">{{ closeButton.text }}</div>
   </div>
 </template>
 
 <script>
-import { setTimeout } from 'timers';
+  import {
+    setTimeout
+  } from 'timers';
   export default {
     name: 'mz-toast',
     props: {
@@ -30,21 +34,35 @@ import { setTimeout } from 'timers';
         default: false
       }
     },
-    mounted () {
-      let { duration, close, $refs, $nextTick } = this
-      // 显示时间默认3000 0为不自动关闭
-      if(parseInt(duration) !== 0) {
-        setTimeout(() => {
-          close()
-        }, duration)
-      }
-      // 父元素设置min-height 子元素height:100%不会生效 用js将子元素的高度改为父元素一样的高度
-      $nextTick(() => {
-        $refs.line.style.height = `${$refs.toast.getBoundingClientRect().height}px`
-        $refs.text.style.height = `${$refs.toast.getBoundingClientRect().height}px`
-      })
+    mounted() {
+      this.updateStyles()
+      this.autoClose()
     },
     methods: {
+      updateStyles() {
+        let {
+          $refs,
+          $nextTick
+        } = this
+        // 父元素设置min-height 子元素height:100%不会生效 用js将子元素的高度改为父元素一样的高度
+        $nextTick(() => {
+          // mounted的时候不能获取高度 用nextTick 在mounted下次队列执行 再去获取
+          $refs.line.style.height = `${$refs.toast.getBoundingClientRect().height}px`
+          $refs.text.style.height = `${$refs.toast.getBoundingClientRect().height}px`
+        })
+      },
+      autoClose() {
+        let {
+          duration,
+          close
+        } = this
+        // 显示时间默认3000 0为不自动关闭
+        if (parseInt(duration) !== 0) {
+          setTimeout(() => {
+            close()
+          }, duration)
+        }
+      },
       close() {
         this.$el.remove()
         this.$destroy()
@@ -78,14 +96,20 @@ import { setTimeout } from 'timers';
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .5);
     color: #fff;
     padding: 0 16px;
-    .close{
+
+    .message{
+      padding: 4px 0;
+    }
+
+    .close {
       padding-left: 16px;
       flex-shrink: 0;
       display: flex;
       align-items: center;
       cursor: pointer;
     }
-    .line{
+
+    .line {
       border-left: 1px solid #666;
       margin-left: 16px;
     }
