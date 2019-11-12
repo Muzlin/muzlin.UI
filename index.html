@@ -44,7 +44,23 @@
 
 <body>
   <div id="app">
-    <mz-button @click="alertToast">弹出消息</mz-button>
+    <!-- <mz-tabs :selected="selectedTab" @update:selected="selectedTab = $event"> -->
+    <!-- https://cn.vuejs.org/v2/guide/components-custom-events.html#sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6 -->
+    <mz-tabs :selected.sync="selectedTab">
+      <mz-tabs-head>
+        <template slot="actions">
+          <mz-button>actions</mz-button>
+        </template>
+        <mz-tabs-item name="tab1">
+          <mz-icon name="setting"></mz-icon>体育
+        </mz-tabs-item>
+        <mz-tabs-item name="tab2">财经</mz-tabs-item>
+      </mz-tabs-head>
+      <mz-tabs-body>
+        <mz-tabs-pane name="tab1">体育新闻</mz-tabs-pane>
+        <mz-tabs-pane name="tab2">财经资讯</mz-tabs-pane>
+      </mz-tabs-body>
+    </mz-tabs>
   </div>
   <script src="./src/app.js"></script>
 </body>

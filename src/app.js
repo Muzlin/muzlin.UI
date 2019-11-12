@@ -11,6 +11,11 @@ import Footer from './footer'
 import Sider from './sider'
 import Content from './content'
 import Toast from './toast'
+import Tabs from './tabs'
+import TabsHead from './tabs-head'
+import TabsItem from './tabs-item'
+import TabsBody from './tabs-body'
+import TabsPane from './tabs-pane'
 Vue.component('mz-button', Button)
 Vue.component('mz-icon', Icon)
 Vue.component('mz-button-group', ButtonGroup)
@@ -23,6 +28,11 @@ Vue.component('mz-footer', Footer)
 Vue.component('mz-sider', Sider)
 Vue.component('mz-content', Content)
 Vue.component('mz-toast', Toast)
+Vue.component('mz-tabs', Tabs)
+Vue.component('mz-tabs-head', TabsHead)
+Vue.component('mz-tabs-item', TabsItem)
+Vue.component('mz-tabs-body', TabsBody)
+Vue.component('mz-tabs-pane', TabsPane)
 
 import plugin from './plugin'
 Vue.use(plugin)
@@ -33,7 +43,8 @@ new Vue({
   data() {
     return {
       loading: false,
-      inputValue: ''
+      inputValue: '',
+      selectedTab: 'tab1'
     }
   },
   mounted() {
