@@ -39,7 +39,7 @@
         type: String,
         default: 'top',
         validator(value) {
-          return ['top', 'bottom', 'middle'].includes(value)
+          return ['top', 'bottom', 'middle'].indexOf(value) > -1
         }
       }
     },
@@ -54,10 +54,7 @@
     },
     methods: {
       updateStyles() {
-        let {
-          $refs,
-          $nextTick
-        } = this
+        let { $refs, $nextTick } = this
         // 父元素设置min-height 子元素height:100%不会生效 用js将子元素的高度改为父元素一样的高度
         $nextTick(() => {
           // mounted的时候不能获取高度 用nextTick 在mounted下次队列执行 再去获取
