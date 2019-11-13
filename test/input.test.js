@@ -10,7 +10,7 @@ Vue.config.devtools = false
 
 describe('Input 组件单元测试', () => {
   it('Input 组件存在', () => {
-    expect(Input).to.be.ok
+    expect(Input).to.exist
   })
   describe('props 参数测试', () => {
     const Constructor = Vue.extend(Input)

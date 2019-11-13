@@ -8,7 +8,7 @@ Vue.config.devtools = false
 
 describe('Col 组件单元测试', () => {
   it('Col 组件存在', () => {
-    expect(Col).to.be.ok
+    expect(Col).to.exist
   })
   describe('props 参数测试', () => {
     const Constructor = Vue.extend(Col)

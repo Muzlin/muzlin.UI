@@ -9,7 +9,7 @@ Vue.config.devtools = false
 // 具体的断言属于 chai.js
 describe('Button 组件测试', () => {
   it('Button 组件存在', () => {
-    expect(Button).to.be.ok
+    expect(Button).to.exist
   })
   describe('props 参数测试', () => {
     const Constructor = Vue.extend(Button)

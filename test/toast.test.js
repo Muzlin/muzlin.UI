@@ -7,7 +7,7 @@ Vue.config.devtools = false
 
 describe('Toast 组件单元测试', () => {
   it('Toast 组件存在', () => {
-    expect(Toast).to.be.ok
+    expect(Toast).to.exist
   })
   describe('props 参数测试', function () {
     // 解除mocha 的2000ms测试限制

@@ -8,7 +8,7 @@ Vue.config.devtools = false
 
 describe('Row 组件单元测试', () => {
   it('Row 组件存在', () => {
-    expect(Row).to.be.ok
+    expect(Row).to.exist
   })
   it('接收 gutter 属性', (done) => {
     Vue.component('mz-row', Row)
