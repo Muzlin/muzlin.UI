@@ -34,14 +34,13 @@
       // 找到当前默认选中的tab item元素 进行传递 方便head组件获取item的位置 用来完成切换时完成下方横线的动画效果
       this.$children.forEach((vm) => {
         if(vm.$options.name === 'mz-tabs-head') {
-          vm.$children.forEach((item) => {
-            if(item.$options.name === 'mz-tabs-item' && item.name === this.selected){
-              console.log(item.$el)
+          vm.$children.forEach((childVm) => {
+            if(childVm.$options.name === 'mz-tabs-item' && childVm.name === this.selected){
+              this.eventBus.$emit('update:selected', this.selected, childVm)
             }
           })
         }
       })
-      this.eventBus.$emit('update:selected', this.selected)
     }
   }
 </script>

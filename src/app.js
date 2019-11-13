@@ -44,7 +44,7 @@ new Vue({
     return {
       loading: false,
       inputValue: '',
-      selectedTab: 'tab1'
+      selectedTab: 'tab3'
     }
   },
   mounted() {
