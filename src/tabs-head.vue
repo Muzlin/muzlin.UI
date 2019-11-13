@@ -8,8 +8,7 @@
 </template>
 <script>
   export default {
-    name: 'mz-tabs-head',
-    inject: ['eventBus']
+    name: 'mz-tabs-head'
   }
 </script>
 <style lang="scss" scoped>
@@ -18,7 +17,6 @@
   .tabs-head {
     border: 1px solid;
     display: flex;
-    align-items: center;
     justify-content: flex-start;
     height: $tab-height;
 

@@ -5,8 +5,7 @@
 </template>
 <script>
 export default {
-  name: 'mz-tabs-body',
-  inject: ['eventBus']
+  name: 'mz-tabs-body'
 }
 </script>
 <style lang="scss" scoped>
