@@ -1,7 +1,6 @@
 const expect = chai.expect
 import Vue from 'vue'
 import TabsItem from '../src/tabs-item'
-Vue.component('mz-tabs-item', TabsItem)
 
 Vue.config.productionTip = false
 Vue.config.devtools = false
