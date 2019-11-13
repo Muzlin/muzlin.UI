@@ -45,5 +45,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  .tabs {}
+  .tabs {
+
+  }
 </style>
