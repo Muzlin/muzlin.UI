@@ -28,6 +28,7 @@
         eventBus: new Vue()
       }
     },
+    // 依赖注入
     provide() {
       return {
         eventBus: this.eventBus

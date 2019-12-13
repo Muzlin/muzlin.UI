@@ -16,6 +16,7 @@ import TabsHead from './tabs-head'
 import TabsItem from './tabs-item'
 import TabsBody from './tabs-body'
 import TabsPane from './tabs-pane'
+import Popover from './popover'
 Vue.component('mz-button', Button)
 Vue.component('mz-icon', Icon)
 Vue.component('mz-button-group', ButtonGroup)
@@ -33,6 +34,7 @@ Vue.component('mz-tabs-head', TabsHead)
 Vue.component('mz-tabs-item', TabsItem)
 Vue.component('mz-tabs-body', TabsBody)
 Vue.component('mz-tabs-pane', TabsPane)
+Vue.component('mz-popover', Popover)
 
 import plugin from './plugin'
 Vue.use(plugin)
