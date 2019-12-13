@@ -35,7 +35,8 @@
       height: 100px;
       width: 100%;
     }
-    .sider{
+
+    .sider {
       border: 1px solid;
       width: 200px;
     }
@@ -43,15 +44,19 @@
 </head>
 
 <body>
-  <div id="app" style="padding: 200px;">
+  <div id="app">
     <!-- <mz-tabs :selected="selectedTab" @update:selected="selectedTab = $event"> -->
     <!-- https://cn.vuejs.org/v2/guide/components-custom-events.html#sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6 -->
-    <mz-popover>
-      <template slot="content">
-        <div>数据库借两块当块级啊是</div>
-      </template>
-      <button>点我</button>
-    </mz-popover>
+    <div style="height: 1400px;">
+    </div>
+    <div style="border: 10px solid blue; height: 100px;margin-top: 200px;">
+      <mz-popover>
+        <template slot="content">
+          <div>数据库借两块当块级啊是</div>
+        </template>
+        <button>点我</button>
+      </mz-popover>
+    </div>
   </div>
   <script src="./src/app.js"></script>
 </body>
