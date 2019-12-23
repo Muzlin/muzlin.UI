@@ -30,10 +30,11 @@
       // document监听函数
       onClickDocument(e) {
         // 如果是点击的是按钮或者弹窗就不做操作
-        if ((this.$refs.popoverContent && this.$refs.popoverContent.contains(e.target)) || this.$refs.popoverTrigger
-          .contains(e.target)) {
+        if ((this.$refs.popoverContent && this.$refs.popoverContent.contains(e.target)) || this.$refs.popoverTrigger.contains(e.target)) {
           return
         }
+
+
         this.close()
       },
       // 打开弹窗
