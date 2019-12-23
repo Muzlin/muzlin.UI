@@ -3,7 +3,7 @@
     <div class="content-wrapper" ref="popoverContent" v-if="visible">
       <slot name="content"></slot>
     </div>
-    <span ref="popoverTrigger">
+    <span ref="popoverTrigger" style="display: inline-block;">
       <slot></slot>
     </span>
   </div>
@@ -33,8 +33,6 @@
         if ((this.$refs.popoverContent && this.$refs.popoverContent.contains(e.target)) || this.$refs.popoverTrigger.contains(e.target)) {
           return
         }
-
-
         this.close()
       },
       // 打开弹窗
@@ -67,6 +65,8 @@
   }
 </script>
 <style lang="scss" scoped>
+  $border-color: #999;
+  $border-radius: 4px;
   .popover {
     display: inline-block;
     vertical-align: top;
@@ -75,8 +75,31 @@
 
   .content-wrapper {
     position: absolute;
-    border: 1px solid red;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, .5);
+    border-radius: $border-radius;
+    border: 1px solid $border-color;
+    padding: .5em 1em;
     transform: translateY(-100%);
+    margin-top: -10px;
+    max-width: 20em;
+    word-break: break-all;
+    // 给边框包括伪元素添加的三角形 加上阴影
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,.5));
+    // 需要给个白色背景 不然字体也会有阴影
+    background: white;
+    &::before, &::after{
+      content: '';
+      display: block;
+      border: 10px solid transparent;
+      position: absolute;
+      left: 10px;
+    }
+    &::before{
+      top: 100%;
+      border-top-color: $border-color;
+    }
+    &::after{
+      top: calc(100% - 1px);
+      border-top-color: white;
+    }
   }
 </style>
