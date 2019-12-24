@@ -45,11 +45,12 @@
 
 <body>
   <div id="app" style="padding: 200px;">
-    <mz-collapse single>
-      <mz-collapse-item title="标题一"> 内容一 </mz-collapse-item>
-      <mz-collapse-item title="标题二"> 内容二 </mz-collapse-item>
-      <mz-collapse-item title="标题三"> 内容三 </mz-collapse-item>
+    <mz-collapse single :selected.sync="selectedTab">
+      <mz-collapse-item title="标题一" name="1"> 内容一 </mz-collapse-item>
+      <mz-collapse-item title="标题二" name="2"> 内容二 </mz-collapse-item>
+      <mz-collapse-item title="标题三" name="3"> 内容三 </mz-collapse-item>
     </mz-collapse>
+    {{selectedTab}}
   </div>
   <script src="./src/app.js"></script>
 </body>

@@ -11,6 +11,9 @@
       single: {
         type: Boolean,
         default: false
+      },
+      selected: {
+        type: String
       }
     },
     data() {
@@ -19,11 +22,17 @@
       }
     },
     provide() {
-      if (!this.single) {
-        return {
-          eventBus: this.eventBus
-        }
+      return {
+        eventBus: this.eventBus
       }
+    },
+    mounted() {
+      this.eventBus.$emit('update:selected', this.selected)
+      // 监听子元素的通知
+      this.eventBus.$on('update:selected', (name) => {
+        // 传递到外层
+        this.$emit('update:selected', name)
+      })
     }
   }
 </script>
