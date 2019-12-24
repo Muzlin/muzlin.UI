@@ -33,6 +33,14 @@
   };
 </script>
 <style lang="scss" scoped>
+  $font-size: 14px;
+  $button-height: 32px;
+  $button-bg: #fff;
+  $button-active-bg: #eee;
+  $border-radius: 4px;
+  $color: #333;
+  $border-color: #999;
+  $border-color-hover: #666;
   @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -44,11 +52,11 @@
   }
 
   .mz-button {
-    height: var(--button-height);
-    font-size: var(--font-size);
-    background: var(--button-bg);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
+    height: $button-height;
+    font-size: $font-size;
+    background: $button-bg;
+    border-radius: $border-radius;
+    border: 1px solid $border-color;
     padding: 0 1em;
     display: inline-flex;
     justify-content: center;
@@ -56,8 +64,8 @@
     vertical-align: middle; // inline 元素对齐
 
     &:hover {
-      background: var(--button-bg-active);
-      border: 1px solid var(--border-color-hover);
+      background: $button-active-bg;
+      border: 1px solid $border-color-hover;
     }
 
     &:focus {
