@@ -45,37 +45,11 @@
 
 <body>
   <div id="app" style="padding: 200px;">
-    <!-- <mz-tabs :selected="selectedTab" @update:selected="selectedTab = $event"> -->
-    <!-- https://cn.vuejs.org/v2/guide/components-custom-events.html#sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6 -->
-    <div>
-      <mz-popover position="bottom">
-        <template slot="content" slot-scope="{close}">
-          <div>
-            数据库借两块当块级啊是数据库借两块当块级啊是数据库借两块当块级啊
-            <mz-button @click="close">关闭</mz-button>
-          </div>
-        </template>
-        <mz-button>点我</mz-button>
-      </mz-popover>
-      <mz-popover position="top">
-        <template slot="content">
-          <div>数据库借两块当块级啊是数据库借两块当块级啊是数据库借两块当块级啊<mz-button>哈哈哈</mz-button></div>
-        </template>
-        <mz-button>点我</mz-button>
-      </mz-popover>
-      <mz-popover position="left">
-        <template slot="content">
-          <div>数据库借两块当块级啊是数据库借两块当块级啊是数据库借两块当块级啊</div>
-        </template>
-        <mz-button>点我</mz-button>
-      </mz-popover>
-      <mz-popover position="right">
-        <template slot="content">
-          <div>数据库借两块当块级啊是数据库借两块当块级啊是数据库借两块当块级啊</div>
-        </template>
-        <mz-button>点我哈哈哈</mz-button>
-      </mz-popover>
-    </div>
+    <mz-collapse>
+      <mz-collapse-item title="标题一"> 内容一 </mz-collapse-item>
+      <mz-collapse-item title="标题二"> 内容二 </mz-collapse-item>
+      <mz-collapse-item title="标题三"> 内容三 </mz-collapse-item>
+    </mz-collapse>
   </div>
   <script src="./src/app.js"></script>
 </body>
