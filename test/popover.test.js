@@ -38,6 +38,33 @@ describe('Popover 组件单元测试', () => {
         })
       })
     })
+    xit('可以设置 trigger', (done) => {
+      Vue.component('mz-popover', Popover)
+      const div = document.createElement('div')
+      document.body.appendChild(div)
+      div.innerHTML = `
+      <mz-popover position="bottom" ref="p" trigger="hover">
+        <template slot="content">
+          弹出内容
+        </template>
+        <button>点我</button>
+      </mz-popover>
+      `
+      vm = new Vue({
+        el: div
+      })
+      vm.$nextTick(() => {
+        let event = new Event('mouseenter')
+        vm.$el.dispatchEvent(event)
+        vm.$nextTick(() => {
+          console.log(vm.$refs.p.$refs)
+          const {popoverContent} = vm.$refs.p.$refs
+          console.log(popoverContent)
+          // expect(popoverContent.classList.contains('position-bottom')).to.be.true
+          done()
+        })
+      })
+    })
 
     afterEach(() => {
       vm.$destroy()
