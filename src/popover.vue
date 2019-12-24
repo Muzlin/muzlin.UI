@@ -32,33 +32,19 @@
         // 将弹出的popover内容移到body里面
         document.body.appendChild(popoverContent)
         // 获取按钮的位置宽高
-        let { width, height, top, left } = popoverTrigger.getBoundingClientRect()
+        const { width, height, top, left } = popoverTrigger.getBoundingClientRect()
         // 获取弹出层的高度
-        let {
-          height: contentHeight
-        } = popoverContent.getBoundingClientRect()
-        // 将popoverContent的位置改变到按钮上面 tips:获取的高度是相对视窗的高度 所以要加上视窗已经滚动的距离
-        switch (this.position) {
-          case 'top':
-            popoverContent.style.left = `${left+window.scrollX}px`
-            popoverContent.style.top = `${top+window.scrollY}px`
-            break;
-          case 'bottom':
-            popoverContent.style.left = `${left+window.scrollX}px`
-            popoverContent.style.top = `${top+window.scrollY+height}px`
-            break;
-          case 'left':
-            popoverContent.style.left = `${left+window.scrollX}px`
-            popoverContent.style.top = `${top+window.scrollY - (contentHeight - height)/2}px`
-            break;
-          case 'right':
-            popoverContent.style.left = `${left+window.scrollX+width}px`
-            popoverContent.style.top = `${top+window.scrollY - (contentHeight - height)/2}px`
-            break;
-
-          default:
-            break;
+        const { height: contentHeight } = popoverContent.getBoundingClientRect()
+        // 构造位置表
+        let positions = {
+          top: { left: `${left+window.scrollX}px`, top: `${top+window.scrollY}px` },
+          bottom: { left: `${left+window.scrollX}px`, top: `${top+window.scrollY+height}px` },
+          left: { left: `${left+window.scrollX}px`, top: `${top+window.scrollY - (contentHeight - height)/2}px`},
+          right: { left: `${left+window.scrollX+width}px`, top: `${top+window.scrollY - (contentHeight - height)/2}px` }
         }
+        // 将popoverContent的位置改变到按钮上面 tips:获取的高度是相对视窗的高度 所以要加上视窗已经滚动的距离
+        popoverContent.style.left = positions[this.position].left
+        popoverContent.style.top = positions[this.position].top
 
       },
       // document监听函数
