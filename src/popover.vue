@@ -1,5 +1,5 @@
 <template>
-  <div class="popover" @click="onClick">
+  <div class="popover" ref="popover">
     <div class="content-wrapper" :class="{[`position-${position}`]:true}" ref="popoverContent" v-if="visible">
       <slot name="content"></slot>
     </div>
@@ -18,11 +18,52 @@
         validator(value) {
           return ['top', 'bottom', 'left', 'right'].indexOf(value) > -1
         }
+      },
+      trigger: {
+        type: String,
+        default: 'click',
+        validator(value) {
+          return ['click', 'hover'].indexOf(value) > -1
+        }
       }
     },
     data() {
       return {
         visible: false
+      }
+    },
+    mounted() {
+      if (this.trigger === 'click') {
+        this.$refs.popover && this.$refs.popover.addEventListener('click', (e) => {
+          // 是否点击的是按钮
+          if (this.$refs.popoverTrigger.contains(event.target)) {
+            // 点击按钮
+            if (this.visible) {
+              this.close()
+            } else {
+              this.open()
+            }
+          }
+        })
+      } else {
+        this.$refs.popover && this.$refs.popover.addEventListener('mouseenter', this.open)
+        this.$refs.popover && this.$refs.popover.addEventListener('mouseleave', this.close)
+      }
+    },
+    destroyed () {
+      if (this.trigger === 'click') {
+        this.$refs.popover && this.$refs.popover.removeEventListener('click', this.open)
+      } else {
+        this.$refs.popover && this.$refs.popover.removeEventListener('mouseenter', this.open)
+        this.$refs.popover && this.$refs.popover.removeEventListener('mouseleave', this.close)
+      }
+    },
+    computed: {
+      openEvent() {
+        return this.trigger === 'click' ? 'click' : 'mouseenter'
+      },
+      closeEvent() {
+        return this.trigger === 'click' ? 'click' : 'mouseleave'
       }
     },
     methods: {
@@ -39,7 +80,7 @@
         let positions = {
           top: { left: `${left+window.scrollX}px`, top: `${top+window.scrollY}px` },
           bottom: { left: `${left+window.scrollX}px`, top: `${top+window.scrollY+height}px` },
-          left: { left: `${left+window.scrollX}px`, top: `${top+window.scrollY - (contentHeight - height)/2}px`},
+          left: { left: `${left+window.scrollX}px`, top: `${top+window.scrollY - (contentHeight - height)/2}px` },
           right: { left: `${left+window.scrollX+width}px`, top: `${top+window.scrollY - (contentHeight - height)/2}px` }
         }
         // 将popoverContent的位置改变到按钮上面 tips:获取的高度是相对视窗的高度 所以要加上视窗已经滚动的距离
