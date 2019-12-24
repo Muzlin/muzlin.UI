@@ -164,11 +164,13 @@
       &::before {
         top: 100%;
         border-top-color: $border-color;
+        border-bottom: none;
       }
 
       &::after {
         top: calc(100% - 1px);
         border-top-color: white;
+        border-bottom: none;
       }
     }
 
@@ -178,11 +180,13 @@
       &::before {
         bottom: 100%;
         border-bottom-color: $border-color;
+        border-top: none;
       }
 
       &::after {
         bottom: calc(100% - 1px);
         border-bottom-color: white;
+        border-top: none;
       }
     }
 
@@ -194,6 +198,7 @@
       &::after {
         top: 50%;
         transform: translateY(-50%);
+        border-right: none;
       }
 
       &::before {
@@ -214,6 +219,7 @@
       &::after {
         top: 50%;
         transform: translateY(-50%);
+        border-left: none;
       }
 
       &::before {
