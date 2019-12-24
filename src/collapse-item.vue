@@ -1,5 +1,5 @@
 <template>
-  <div class="collapse-item" @click="open = !open">
+  <div class="collapse-item" @click="toggle">
     <div class="title">
       {{ title }}
     </div>
@@ -20,6 +20,27 @@
     data () {
       return {
         open: false
+      }
+    },
+    inject: ['eventBus'],
+    mounted () {
+      this.eventBus && this.eventBus.$on('update:selected', (vm) => {
+        if(vm !== this) {
+          this.close()
+        }
+      })
+    },
+    methods: {
+      toggle() {
+        if(this.open) {
+          this.close()
+        } else {
+          this.open = true
+          this.eventBus && this.eventBus.$emit('update:selected', this)
+        }
+      },
+      close() {
+        this.open = false
       }
     }
   }
