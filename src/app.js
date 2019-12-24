@@ -50,7 +50,7 @@ new Vue({
     return {
       loading: false,
       inputValue: '',
-      selectedTab: '2'
+      selectedTab: ['2', '3']
     }
   },
   mounted() {

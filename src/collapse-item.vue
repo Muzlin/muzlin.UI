@@ -1,6 +1,6 @@
 <template>
-  <div class="collapse-item" @click="toggle">
-    <div class="title">
+  <div class="collapse-item">
+    <div class="title" @click="toggle">
       {{ title }}
     </div>
     <div class="content" v-if="open">
@@ -21,35 +21,28 @@
         required: true
       }
     },
-    data () {
+    data() {
       return {
         open: false
       }
     },
     inject: ['eventBus'],
-    mounted () {
-      this.eventBus && this.eventBus.$on('update:selected', (name) => {
-        if(name !== this.name) {
-          this.close()
+    mounted() {
+      this.eventBus && this.eventBus.$on('update:selected', (names) => {
+        if (names.indexOf(this.name) > -1) {
+          this.open = true
         } else {
-          this.show()
+          this.open = false
         }
       })
     },
     methods: {
       toggle() {
-        if(this.open) {
-          this.close()
+        if (this.open) {
+          this.eventBus && this.eventBus.$emit('update:removeSelected', this.name)
         } else {
-          this.show()
-          this.eventBus && this.eventBus.$emit('update:selected', this.name)
+          this.eventBus && this.eventBus.$emit('update:addSelected', this.name)
         }
-      },
-      close() {
-        this.open = false
-      },
-      show() {
-        this.open = true
       }
     }
   }
@@ -67,19 +60,22 @@
       display: flex;
       align-items: center;
     }
-    &:first-child{
-      > .title {
+
+    &:first-child {
+      >.title {
         border-top-left-radius: $border-radius;
         border-top-right-radius: $border-radius;
       }
     }
-    &:last-child{
-      > .title:last-child {
+
+    &:last-child {
+      >.title:last-child {
         border-bottom-left-radius: $border-radius;
         border-bottom-right-radius: $border-radius;
       }
     }
-    > .content{
+
+    >.content {
       padding: 8px;
     }
   }
