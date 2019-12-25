@@ -26,7 +26,6 @@
   "homepage": "https://github.com/Muzlin/muzlin.UI#readme",
   "dependencies": {
     "node-sass": "^4.10.0",
-    "sass-loader": "^8.0.0",
     "v": "^0.3.0",
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.1"
