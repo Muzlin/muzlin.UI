@@ -38,13 +38,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  $height: 32px;
-  $border-color: #999;
-  $border-color-hover: #666;
-  $border-radius: 4px;
-  $font-size: 12px;
-  $box-shadow-color: rgba(0, 0, 0, 0.5);
-  $error-color: #f1435d;
+  @import "var";
 
   .wrapper {
     font-size: $font-size;

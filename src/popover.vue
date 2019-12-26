@@ -128,8 +128,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  $border-color: #999;
-  $border-radius: 4px;
+  @import "var";
 
   .popover {
     display: inline-block;

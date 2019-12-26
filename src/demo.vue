@@ -1,6 +1,6 @@
 <template>
   <div class="demo">
-    <mz-button>哈哈</mz-button>
+    <mz-button @click="tt">哈哈</mz-button>
   </div>
 </template>
 <script>
@@ -9,6 +9,11 @@ export default {
   name: 'demo',
   components: {
     'mz-button': Button
+  },
+  methods: {
+    tt() {
+      this.$toast('hha')
+    }
   }
 }
 </script>

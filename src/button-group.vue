@@ -15,7 +15,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  $border-radius: 4px;
+  @import "var";
   .mz-button-group {
     display: inline-flex;
     vertical-align: middle;

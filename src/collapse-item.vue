@@ -48,8 +48,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  $grey: #ddd;
-  $border-radius: 4px;
+  @import "var";
 
   .collapse-item {
     >.title {
