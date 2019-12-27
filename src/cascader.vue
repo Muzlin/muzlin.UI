@@ -1,33 +1,46 @@
 <template>
   <div class="cascader">
-    <div class="trigger">
+    <div class="trigger" @click="popoverVisible = !popoverVisible">
       <slot></slot>
     </div>
     <div class="popover">
-      <div v-for="(item, index) in source" :key="index">
-        <CascaderItem :sourceItem="item"></CascaderItem>
-      </div>
+      <mz-cascader-items :items="source"></mz-cascader-items>
     </div>
   </div>
 </template>
 <script>
-import CascaderItem from './cascader-item'
-export default {
-  name: 'mz-cascader',
-  components: {
-    CascaderItem
-  },
-  props: {
-    source: {
-      type: Array,
-      required: true
+  import CascaderItems from './cascader-items'
+  export default {
+    name: 'mz-cascader',
+    components: {
+      'mz-cascader-items': CascaderItems
+    },
+    props: {
+      source: {
+        type: Array,
+        required: true
+      }
     }
   }
-}
 </script>
 <style lang="scss" scoped>
   @import "var";
-  .cascader{
-    border: 1px solid;
+
+  .cascader {
+    .trigger {
+      border: 1px solid;
+      height: $height;
+      width: 100px;
+    }
+
+    .popover {
+      height: 200px;
+      border: 1px solid;
+      display: flex;
+
+      .label {
+        white-space: nowrap;
+      }
+    }
   }
 </style>
