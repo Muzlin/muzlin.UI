@@ -3,8 +3,8 @@
     <div class="trigger" @click="popoverVisible = !popoverVisible">
       <slot></slot>
     </div>
-    <div class="popover">
-      <mz-cascader-items :items="source"></mz-cascader-items>
+    <div class="popover-wrapper" v-if="popoverVisible">
+      <mz-cascader-items :items="source" :height="popoverHeight"></mz-cascader-items>
     </div>
   </div>
 </template>
@@ -19,6 +19,14 @@
       source: {
         type: Array,
         required: true
+      },
+      popoverHeight: {
+        type: String
+      }
+    },
+    data () {
+      return {
+        popoverVisible: false
       }
     }
   }
@@ -27,16 +35,21 @@
   @import "var";
 
   .cascader {
+    position: relative;
     .trigger {
       border: 1px solid;
       height: $height;
       width: 100px;
     }
 
-    .popover {
+    .popover-wrapper {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      background: #fff;
       height: 200px;
-      border: 1px solid;
       display: flex;
+      @extend .box-show;
 
       .label {
         white-space: nowrap;

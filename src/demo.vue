@@ -1,7 +1,8 @@
 <template>
   <div class="demo">
     <mz-button>哈哈</mz-button>
-    <mz-cascader :source="source"></mz-cascader>
+    <mz-cascader :source="source" popoverHeight="200px"></mz-cascader>
+    <p>2321</p>
   </div>
 </template>
 <script>
@@ -67,6 +68,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
   .demo{
     min-height: 100vh;
   }
