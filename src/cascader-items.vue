@@ -43,6 +43,9 @@
     methods: {
       onClickLabel(item) {
         let selectedCopy = JSON.parse(JSON.stringify(this.selected))
+        // 新选中 删除后面的所有值 防止数据残留
+        selectedCopy.splice(this.level)
+        // 更新选中的值
         selectedCopy[this.level] = item
         this.$emit('update:selected', selectedCopy)
       },
