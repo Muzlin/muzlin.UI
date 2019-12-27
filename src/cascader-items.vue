@@ -1,13 +1,14 @@
 <template>
   <div class="cascader-items" :style="{height: height}">
+    {{level}}
     <div class="left">
-      <div class="label" v-for="item, index in items" :key="index" @click="leftSelected = item">
+      <div class="label" v-for="item, index in items" :key="index" @click="onClickLabel(item)">
         {{item.name}}
         <mz-icon v-if="item.children" name="right"></mz-icon>
       </div>
     </div>
     <div class="right" v-if="rightItems">
-      <mz-cascader-items :items="rightItems" :height="height"></mz-cascader-items>
+      <mz-cascader-items :items="rightItems" :height="height" :selected="selected" @update:selected="onUpdateSelected" :level="level + 1"></mz-cascader-items>
     </div>
   </div>
 </template>
@@ -24,16 +25,29 @@
       },
       height: {
         type: String
-      }
-    },
-    data () {
-      return {
-        leftSelected: null
+      },
+      selected: {
+        type: Array,
+        default: () => []
+      },
+      level: {
+        type: Number,
+        default: 0
       }
     },
     computed: {
       rightItems() {
-        return this.leftSelected && this.leftSelected.children || null
+        return this.selected[this.level] && this.selected[this.level].children || null
+      }
+    },
+    methods: {
+      onClickLabel(item) {
+        let selectedCopy = JSON.parse(JSON.stringify(this.selected))
+        selectedCopy[this.level] = item
+        this.$emit('update:selected', selectedCopy)
+      },
+      onUpdateSelected(newSelected) {
+        this.$emit('update:selected', newSelected)
       }
     }
   }

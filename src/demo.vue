@@ -1,7 +1,7 @@
 <template>
   <div class="demo">
-    <mz-button>哈哈</mz-button>
-    <mz-cascader :source="source" popoverHeight="200px"></mz-cascader>
+    <mz-button>{{selected}}</mz-button>
+    <mz-cascader :source="source" popoverHeight="200px" :selected="selected" @update:selected="selected = $event"></mz-cascader>
     <p>2321</p>
   </div>
 </template>
@@ -16,6 +16,7 @@ export default {
   },
   data () {
     return {
+      selected: ['四川', '成都'],
       source: [{
         name: '四川',
         children: [

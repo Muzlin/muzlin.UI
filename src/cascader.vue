@@ -4,7 +4,7 @@
       <slot></slot>
     </div>
     <div class="popover-wrapper" v-if="popoverVisible">
-      <mz-cascader-items :items="source" :height="popoverHeight"></mz-cascader-items>
+      <mz-cascader-items :items="source" :height="popoverHeight" :selected="selected" @update:selected="onUpdateSelected"></mz-cascader-items>
     </div>
   </div>
 </template>
@@ -22,11 +22,20 @@
       },
       popoverHeight: {
         type: String
+      },
+      selected: {
+        type: Array,
+        default: () => []
       }
     },
     data () {
       return {
         popoverVisible: false
+      }
+    },
+    methods: {
+      onUpdateSelected(newSelected) {
+        this.$emit('update:selected', newSelected)
       }
     }
   }
