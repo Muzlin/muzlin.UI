@@ -1,6 +1,6 @@
 <template>
-  <div class="cascader">
-    <div class="trigger" @click="popoverVisible = !popoverVisible">
+  <div class="cascader" ref="cascader">
+    <div class="trigger" @click="toggle">
       <span>{{result}}</span>
       <slot></slot>
     </div>
@@ -44,6 +44,28 @@
       }
     },
     methods: {
+      onClickDocument(e) {
+        if(!this.$refs.cascader.contains(e.target)) {
+          this.close()
+        }
+      },
+      open() {
+        this.popoverVisible = true
+        this.$nextTick(() => {
+          document.addEventListener('click', this.onClickDocument)
+        })
+      },
+      close() {
+        this.popoverVisible = false
+        document.removeEventListener('click', this.onClickDocument)
+      },
+      toggle() {
+        if(this.popoverVisible) {
+          this.close()
+        }else{
+          this.open()
+        }
+      },
       onUpdateSelected(newSelected) {
         this.$emit('update:selected', newSelected)
         // 用户当前选中的项
@@ -78,6 +100,7 @@
   @import "var";
 
   .cascader {
+    display: inline-block;
     position: relative;
     .trigger {
       border: 1px solid $border-color;

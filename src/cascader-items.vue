@@ -82,6 +82,7 @@
       padding: .3em 1em;
       display: flex;
       align-items: center;
+      white-space: nowrap;
       &:hover {
         background: $grey;
       }
