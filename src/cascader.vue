@@ -5,7 +5,7 @@
       <slot></slot>
     </div>
     <div class="popover-wrapper" v-if="popoverVisible">
-      <mz-cascader-items :items="source" :height="popoverHeight" :selected="selected" @update:selected="onUpdateSelected"></mz-cascader-items>
+      <mz-cascader-items :items="source" :height="popoverHeight" :selected="selected" @update:selected="onUpdateSelected" :loadData="loadData"></mz-cascader-items>
     </div>
   </div>
 </template>
@@ -27,6 +27,10 @@
       selected: {
         type: Array,
         default: () => []
+      },
+      loadData: {
+        type: Function,
+        default: () => {}
       }
     },
     data () {
@@ -42,6 +46,30 @@
     methods: {
       onUpdateSelected(newSelected) {
         this.$emit('update:selected', newSelected)
+        // 用户当前选中的项
+        let lastItem = newSelected[newSelected.length -1]
+        // 处理用户回调
+        let updateSource = (result) => {
+          let complexSearch = (source) => {
+            source.map(item => {
+              if(item.id === lastItem.id) {
+                result && result.length > 0 && (item.children = result)
+              } else {
+                // 是否有children
+                if(item.children) {
+                  complexSearch(item.children)
+                }
+              }
+            })
+          }
+          let sourceCopy = JSON.parse(JSON.stringify(this.source))
+          complexSearch(sourceCopy)
+          this.$emit('update:source', sourceCopy)
+        }
+        if(!lastItem.isLeaf) {
+          console.log('22')
+          this.loadData(lastItem, updateSource) // 把用户传递的函数执行调用
+        }
       }
     }
   }

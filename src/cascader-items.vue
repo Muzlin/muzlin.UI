@@ -2,8 +2,8 @@
   <div class="cascader-items" :style="{height: height}">
     <div class="left">
       <div class="label" v-for="item, index in items" :key="index" @click="onClickLabel(item)">
-        {{item.name}}
-        <mz-icon v-if="item.children" name="right"></mz-icon>
+        <span class="name">{{item.name}}</span>
+        <mz-icon v-if="rightArrowVisible(item)" name="right"></mz-icon>
       </div>
     </div>
     <div class="right" v-if="rightItems">
@@ -32,11 +32,15 @@
       level: {
         type: Number,
         default: 0
+      },
+      loadData: {
+        type: Function
       }
     },
     computed: {
       rightItems() {
-        return this.selected[this.level] && this.selected[this.level].children || null
+        let item = this.items.filter(i => i.name === (this.selected[this.level] && this.selected[this.level].name))[0]
+        return item && item.children || null
       }
     },
     methods: {
@@ -50,6 +54,9 @@
       },
       onUpdateSelected(newSelected) {
         this.$emit('update:selected', newSelected)
+      },
+      rightArrowVisible(item) {
+        return this.loadData ? !item.isLeaf : item.children
       }
     }
   }
@@ -63,7 +70,7 @@
     height: 100px;
     .left{
       height: 100%;
-      padding: .3em 0;
+      // padding: .3em 0;
       overflow: auto;
     }
     .right{
@@ -75,9 +82,15 @@
       padding: .3em 1em;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      &:hover {
+        background: $grey;
+      }
+      .name {
+        margin-right: 1em;
+        user-select: none;
+      }
       .mz-icon {
-        margin-left: 1em;
+        margin-left: auto;
         transform: scale(.7);
       }
     }
