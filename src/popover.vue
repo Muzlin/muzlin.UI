@@ -34,7 +34,7 @@
     },
     mounted() {
       if (this.trigger === 'click') {
-        this.$refs.popover && this.$refs.popover.addEventListener('click', (e) => {
+        this.$refs.popover && this.$refs.popover.addEventListener('click', (event) => {
           // 是否点击的是按钮
           if (this.$refs.popoverTrigger.contains(event.target)) {
             // 点击按钮
