@@ -1,10 +1,18 @@
 <template>
   <div class="demo">
-    <mz-cascader popoverHeight="200px" :selected.sync="selected" :source.sync="source" :load-data="loadData"></mz-cascader>
+    <div>
+      <mz-cascader popoverHeight="200px" :selected.sync="selected" :source.sync="source" :load-data="loadData">
+      </mz-cascader>
+    </div>
+    <div>
+      <mz-cascader popoverHeight="200px" :selected.sync="selected2" :source.sync="source" :load-data="loadData">
+      </mz-cascader>
+    </div>
+    <div>
+      <mz-cascader popoverHeight="200px" :selected.sync="selected3" :source.sync="source" :load-data="loadData">
+      </mz-cascader>
+    </div>
     <p>2321</p>
-    <mz-popover>
-
-    </mz-popover>
   </div>
 </template>
 <script>
@@ -21,7 +29,7 @@
           node.isLeaf = !db.filter(item => item.parent_id === node.id).length > 0
         })
         resolve(result)
-      }, 0)
+      }, 2000)
     })
   }
   export default {
@@ -34,6 +42,8 @@
     data() {
       return {
         selected: [],
+        selected2: [],
+        selected3: [],
         source: [],
         staticSource: [{
           name: '四川',

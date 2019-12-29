@@ -1,18 +1,21 @@
 <template>
-  <div class="cascader" ref="cascader">
+  <div class="cascader" ref="cascader" v-click-outside="close">
     <div class="trigger" @click="toggle">
       <span>{{result}}</span>
       <slot></slot>
     </div>
     <div class="popover-wrapper" v-if="popoverVisible">
-      <mz-cascader-items :items="source" :height="popoverHeight" :selected="selected" @update:selected="onUpdateSelected" :loadData="loadData"></mz-cascader-items>
+      <mz-cascader-items :items="source" :height="popoverHeight" :selected="selected"
+      @update:selected="onUpdateSelected" :loadData="loadData" :loadingItem="loadingItem"></mz-cascader-items>
     </div>
   </div>
 </template>
 <script>
   import CascaderItems from './cascader-items'
+  import ClickOutside from './click-outside'
   export default {
     name: 'mz-cascader',
+    directives: { ClickOutside },
     components: {
       'mz-cascader-items': CascaderItems
     },
@@ -35,7 +38,8 @@
     },
     data () {
       return {
-        popoverVisible: false
+        popoverVisible: false,
+        loadingItem: {}
       }
     },
     computed: {
@@ -44,20 +48,11 @@
       }
     },
     methods: {
-      onClickDocument(e) {
-        if(!this.$refs.cascader.contains(e.target)) {
-          this.close()
-        }
-      },
       open() {
         this.popoverVisible = true
-        this.$nextTick(() => {
-          document.addEventListener('click', this.onClickDocument)
-        })
       },
       close() {
         this.popoverVisible = false
-        document.removeEventListener('click', this.onClickDocument)
       },
       toggle() {
         if(this.popoverVisible) {
@@ -72,6 +67,8 @@
         let lastItem = newSelected[newSelected.length -1]
         // 处理用户回调
         let updateSource = (result) => {
+          // 加载完成
+          this.loadingItem = {}
           let complexSearch = (source) => {
             source.map(item => {
               if(item.id === lastItem.id) {
@@ -88,9 +85,9 @@
           complexSearch(sourceCopy)
           this.$emit('update:source', sourceCopy)
         }
-        if(!lastItem.isLeaf) {
-          console.log('22')
+        if(!lastItem.isLeaf && this.loadData) {
           this.loadData(lastItem, updateSource) // 把用户传递的函数执行调用
+          this.loadingItem = lastItem
         }
       }
     }
@@ -119,6 +116,7 @@
       background: #fff;
       height: 200px;
       display: flex;
+      z-index: 1;
       @extend .box-show;
 
       .label {

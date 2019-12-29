@@ -3,11 +3,19 @@
     <div class="left">
       <div class="label" v-for="item, index in items" :key="index" @click="onClickLabel(item)">
         <span class="name">{{item.name}}</span>
-        <mz-icon v-if="rightArrowVisible(item)" name="right"></mz-icon>
+        <div class="icons">
+          <template v-if="loadingItem.name === item.name">
+            <mz-icon class="loading" name="loading"></mz-icon>
+          </template>
+          <template v-else>
+            <mz-icon class="next" v-if="rightArrowVisible(item)" name="right"></mz-icon>
+          </template>
+        </div>
       </div>
     </div>
     <div class="right" v-if="rightItems">
-      <mz-cascader-items :items="rightItems" :height="height" :selected="selected" @update:selected="onUpdateSelected" :level="level + 1"></mz-cascader-items>
+      <mz-cascader-items :items="rightItems" :height="height" :selected="selected" @update:selected="onUpdateSelected"
+        :level="level + 1" :loadData="loadData" :loadingItem="loadingItem"></mz-cascader-items>
     </div>
   </div>
 </template>
@@ -35,6 +43,10 @@
       },
       loadData: {
         type: Function
+      },
+      loadingItem: {
+        type: Object,
+        default: () => {}
       }
     },
     computed: {
@@ -63,36 +75,55 @@
 </script>
 <style lang="scss" scoped>
   @import "var";
+
   .cascader-items {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     height: 100px;
-    .left{
+
+    .left {
       height: 100%;
       // padding: .3em 0;
       overflow: auto;
     }
-    .right{
+
+    .right {
       height: 100%;
       border-left: 1px solid $border-color-light;
     }
-    .label{
+
+    .label {
       cursor: pointer;
       padding: .3em 1em;
       display: flex;
       align-items: center;
       white-space: nowrap;
+
       &:hover {
         background: $grey;
       }
+
       .name {
         margin-right: 1em;
         user-select: none;
       }
-      .mz-icon {
+
+      .icons {
         margin-left: auto;
-        transform: scale(.7);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        .mz-icon {
+          &.next {
+            transform: scale(.7);
+          }
+
+          &.loading {
+            animation: spin 1.5s infinite linear;
+          }
+        }
       }
     }
   }
