@@ -1,157 +1,32 @@
 <template>
   <div class="demo">
-    <div>
-      <mz-cascader popoverHeight="200px" :selected.sync="selected" :source.sync="source" :load-data="loadData">
-      </mz-cascader>
-    </div>
-    <div>
-      <mz-cascader popoverHeight="200px" :selected.sync="selected2" :source.sync="source" :load-data="loadData">
-      </mz-cascader>
-    </div>
-    <div>
-      <mz-cascader popoverHeight="200px" :selected.sync="selected3" :source.sync="source" :load-data="loadData">
-      </mz-cascader>
-    </div>
-    <p>2321</p>
+    <mz-slides :selected.sync="selected" width="300px" height="200px" :autoPlay="true">
+      <MzSlidesItem name="0">
+        <div class="box">1</div>
+      </MzSlidesItem>
+      <MzSlidesItem name="1">
+        <div class="box">2</div>
+      </MzSlidesItem>
+      <MzSlidesItem name="2">
+        <div class="box">3</div>
+      </MzSlidesItem>
+    </mz-slides>
   </div>
 </template>
 <script>
-  import Button from './button'
-  import Cascader from './cascader'
-  import db from './db'
-  import Popover from './popover'
-
-  function ajax(parentId = 0) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        let result = db.filter(item => item.parent_id === parentId)
-        result.map(node => {
-          node.isLeaf = !db.filter(item => item.parent_id === node.id).length > 0
-        })
-        resolve(result)
-      }, 2000)
-    })
-  }
+  import MzSlides from './slides'
+  import MzSlidesItem from './slides-item'
+  import MzButton from './button'
   export default {
     name: 'demo',
     components: {
-      'mz-button': Button,
-      'mz-cascader': Cascader,
-      'mz-popover': Popover
+      MzSlides,
+      MzSlidesItem,
+      MzButton
     },
     data() {
       return {
-        selected: [],
-        selected2: [],
-        selected3: [],
-        source: [],
-        staticSource: [{
-          name: '四川',
-          children: [{
-              name: '成都',
-              children: [{
-                  name: '高新区'
-                },
-                {
-                  name: '武侯区'
-                }
-              ]
-            },
-            {
-              name: '广安',
-              children: [{
-                  name: '广安区'
-                },
-                {
-                  name: '华蓥市'
-                }
-              ]
-            },
-            {
-              name: '攀枝花',
-              children: [{
-                  name: '仁和'
-                },
-                {
-                  name: '东区'
-                }
-              ]
-            }
-          ]
-        }, {
-          name: '浙江',
-          children: [{
-              name: '杭州',
-              children: [{
-                  name: '嘉欣'
-                },
-                {
-                  name: '南部'
-                }
-              ]
-            },
-            {
-              name: '上城',
-              children: [{
-                  name: '嘉禾区'
-                },
-                {
-                  name: '南阳区'
-                }
-              ]
-            }
-          ]
-        }, {
-          name: '云南',
-          children: [{
-              name: '昆明',
-              children: [{
-                  name: '北部区'
-                },
-                {
-                  name: '高新区'
-                }
-              ]
-            },
-            {
-              name: '西昌',
-              children: [{
-                  name: '西昌南'
-                },
-                {
-                  name: '西昌北'
-                }
-              ]
-            },
-            {
-              name: '楚雄',
-              children: [{
-                  name: '安平区'
-                },
-                {
-                  name: '北疆区'
-                }
-              ]
-            }
-          ]
-        }]
-      }
-    },
-    created() {
-      ajax().then(result => {
-        this.source = result
-      })
-    },
-    methods: {
-      loadData(node, callback) {
-        let {
-          name,
-          id,
-          parent_id
-        } = node
-        ajax(id).then(result => {
-          callback(result)
-        })
+        selected: '2'
       }
     }
   }
@@ -164,6 +39,17 @@
   }
 
   .demo {
-    min-height: 100vh;
+    // min-height: 100vh;
+    padding: 100px;
+
+    .box {
+      width: 100%;
+      height: 350px;
+      background: #ddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+    }
   }
 </style>
