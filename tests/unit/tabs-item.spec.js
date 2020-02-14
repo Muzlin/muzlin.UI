@@ -3,7 +3,7 @@ import sinonChai from 'sinon-chai'
 import { mount } from '@vue/test-utils'
 import sinon from 'sinon'
 chai.use(sinonChai)
-import TabsItem from '@/tabs-item'
+import TabsItem from '@/tabs/tabs-item'
 
 describe('TabsItem 组件单元测试', () => {
   it('TabsItem 组件存在', () => {

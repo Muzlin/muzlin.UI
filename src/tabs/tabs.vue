@@ -5,9 +5,6 @@
 </template>
 <script>
   import Vue from 'vue'
-  import {
-    throws
-  } from 'assert'
   export default {
     name: 'mz-tabs',
     props: {

@@ -22,7 +22,7 @@
 </template>
 
 <script>
-  import MzIcon from './icon'
+  import MzIcon from '../icon'
   export default {
     name: 'mz-slides',
     components: {

@@ -3,11 +3,11 @@ import sinonChai from 'sinon-chai'
 import { mount } from '@vue/test-utils'
 chai.use(sinonChai)
 import Vue from 'vue'
-import Tabs from '@/tabs'
-import TabsHead from '@/tabs-head'
-import TabsItem from '@/tabs-item'
-import TabsBody from '@/tabs-body'
-import TabsPane from '@/tabs-pane'
+import Tabs from '@/tabs/tabs'
+import TabsHead from '@/tabs/tabs-head'
+import TabsItem from '@/tabs/tabs-item'
+import TabsBody from '@/tabs/tabs-body'
+import TabsPane from '@/tabs/tabs-pane'
 Vue.component('mz-tabs', Tabs)
 Vue.component('mz-tabs-head', TabsHead)
 Vue.component('mz-tabs-item', TabsItem)

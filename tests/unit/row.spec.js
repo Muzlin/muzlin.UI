@@ -2,8 +2,8 @@ import chai, { expect } from 'chai'
 import sinonChai from 'sinon-chai'
 import { mount } from '@vue/test-utils'
 chai.use(sinonChai)
-import Row from '@/row'
-import Col from '@/col'
+import Row from '@/grid/row'
+import Col from '@/grid/col'
 
 describe('Row 组件单元测试', () => {
   it('Row 组件存在', () => {

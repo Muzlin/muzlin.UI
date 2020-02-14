@@ -38,7 +38,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "var";
+
 
   .wrapper {
     font-size: $font-size;

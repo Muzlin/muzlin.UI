@@ -10,13 +10,16 @@
       <MzSlidesItem name="2">
         <div class="box">3</div>
       </MzSlidesItem>
+      <MzSlidesItem name="3">
+        <div class="box">4</div>
+      </MzSlidesItem>
     </mz-slides>
   </div>
 </template>
 <script>
-  import MzSlides from './slides'
-  import MzSlidesItem from './slides-item'
-  import MzButton from './button'
+  import MzSlides from '../src/slides/slides'
+  import MzSlidesItem from '../src/slides/slides-item'
+  import MzButton from './button/button'
   export default {
     name: 'demo',
     components: {

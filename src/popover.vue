@@ -128,7 +128,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "var";
+
 
   .popover {
     display: inline-block;

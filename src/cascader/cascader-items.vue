@@ -20,7 +20,7 @@
   </div>
 </template>
 <script>
-  import Icon from './icon'
+  import Icon from '../icon'
   export default {
     name: 'mz-cascader-items',
     components: {
@@ -74,7 +74,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "var";
+
 
   .cascader-items {
     display: flex;

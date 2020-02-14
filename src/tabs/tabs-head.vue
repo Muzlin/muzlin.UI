@@ -22,7 +22,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "var";
+
 
   .tabs-head {
     border-bottom: 1px solid $border-color;

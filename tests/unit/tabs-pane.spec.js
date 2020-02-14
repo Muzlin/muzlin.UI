@@ -1,6 +1,6 @@
 import {expect} from 'chai'
 import {mount} from '@vue/test-utils'
-import TabsPane from '@/tabs-pane'
+import TabsPane from '@/tabs/tabs-pane'
 
 describe('TabsPane 组件单元测试', () => {
   it('TabsPane 组件存在', () => {

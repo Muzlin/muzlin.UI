@@ -94,7 +94,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "var";
+
 
   .cascader {
     display: inline-block;

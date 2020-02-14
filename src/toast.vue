@@ -89,7 +89,7 @@
 
 
 <style lang="scss" scoped>
-  @import "var";
+
 
   @keyframes fade-in-bottom {
     0% {

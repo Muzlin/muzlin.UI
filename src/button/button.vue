@@ -7,7 +7,7 @@
 </template>
 <script>
   import Vue from 'vue'
-  import Icon from './icon.vue'
+  import Icon from '../icon.vue'
   export default {
     name: "mz-button",
     components: {
@@ -33,7 +33,7 @@
   };
 </script>
 <style lang="scss" scoped>
-  @import "var";
+
   .mz-button {
     height: $button-height;
     font-size: $font-size;
