@@ -50,7 +50,7 @@
         this.$refs.popover && this.$refs.popover.addEventListener('mouseleave', this.close)
       }
     },
-    destroyed () {
+    beforeDestroy() {
       if (this.trigger === 'click') {
         this.$refs.popover && this.$refs.popover.removeEventListener('click', this.open)
       } else {
