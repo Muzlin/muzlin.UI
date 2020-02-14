@@ -5,26 +5,26 @@
         <span class="name">{{item.name}}</span>
         <div class="icons">
           <template v-if="loadingItem.name === item.name">
-            <mz-icon class="loading" name="loading"></mz-icon>
+            <m-icon class="loading" name="loading"></m-icon>
           </template>
           <template v-else>
-            <mz-icon class="next" v-if="rightArrowVisible(item)" name="right"></mz-icon>
+            <m-icon class="next" v-if="rightArrowVisible(item)" name="right"></m-icon>
           </template>
         </div>
       </div>
     </div>
     <div class="right" v-if="rightItems">
-      <mz-cascader-items :items="rightItems" :height="height" :selected="selected" @update:selected="onUpdateSelected"
-        :level="level + 1" :loadData="loadData" :loadingItem="loadingItem"></mz-cascader-items>
+      <m-cascader-items :items="rightItems" :height="height" :selected="selected" @update:selected="onUpdateSelected"
+        :level="level + 1" :loadData="loadData" :loadingItem="loadingItem"></m-cascader-items>
     </div>
   </div>
 </template>
 <script>
   import Icon from '../icon'
   export default {
-    name: 'mz-cascader-items',
+    name: 'm-cascader-items',
     components: {
-      'mz-icon': Icon
+      'm-icon': Icon
     },
     props: {
       items: {
@@ -115,7 +115,7 @@
         align-items: center;
         justify-content: flex-start;
 
-        .mz-icon {
+        .m-icon {
           &.next {
             transform: scale(.7);
           }

@@ -10,7 +10,7 @@
 </template>
 <script>
   export default {
-    name: 'mz-collapse-item',
+    name: 'm-collapse-item',
     props: {
       title: {
         type: String,

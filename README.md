@@ -24,8 +24,8 @@
     export default {
       name: 'app',
       components: {
-        'mz-button': Button,
-        'mz-icon': Icon
+        'm-button': Button,
+        'm-icon': Icon
       }
     }
     ```

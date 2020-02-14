@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  name: 'mz-tabs-pane',
+  name: 'm-tabs-pane',
   inject: ['eventBus'],
   props: {
     name: {

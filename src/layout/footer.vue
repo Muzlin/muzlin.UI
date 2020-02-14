@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'mz-footer'
+    name: 'm-footer'
   }
 </script>
 

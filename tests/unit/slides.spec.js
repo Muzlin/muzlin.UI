@@ -13,23 +13,23 @@ describe('Slides 组件单元测试', () => {
     expect(Slides).to.exist
   })
 
-  it('接受 MzSlidesItem，默认展示第一个', (done) => {
-    Vue.component('mz-slides-item', SlidesItem)
+  it('接受 MSlidesItem，默认展示第一个', (done) => {
+    Vue.component('m-slides-item', SlidesItem)
     const wrapper = mount(Slides, {
       propsData: {
         autoPlay: false
       },
       slots: {
         default: `
-          <mz-slides-item name="1">
+          <m-slides-item name="1">
             <div class="box1">1</div>
-          </mz-slides-item>
-          <mz-slides-item name="2">
+          </m-slides-item>
+          <m-slides-item name="2">
             <div class="box2">2</div>
-          </mz-slides-item>
-          <mz-slides-item name="3">
+          </m-slides-item>
+          <m-slides-item name="3">
             <div class="box3">3</div>
-          </mz-slides-item>
+          </m-slides-item>
         `
       }
     })
@@ -39,7 +39,7 @@ describe('Slides 组件单元测试', () => {
     })
   })
   it('selected 是几，选中的就是几', (done) => {
-    Vue.component('mz-slides-item', SlidesItem)
+    Vue.component('m-slides-item', SlidesItem)
     const wrapper = mount(Slides, {
       propsData: {
         autoPlay: false,
@@ -47,15 +47,15 @@ describe('Slides 组件单元测试', () => {
       },
       slots: {
         default: `
-          <mz-slides-item name="1">
+          <m-slides-item name="1">
             <div class="box1">1</div>
-          </mz-slides-item>
-          <mz-slides-item name="2">
+          </m-slides-item>
+          <m-slides-item name="2">
             <div class="box2">2</div>
-          </mz-slides-item>
-          <mz-slides-item name="3">
+          </m-slides-item>
+          <m-slides-item name="3">
             <div class="box3">3</div>
-          </mz-slides-item>
+          </m-slides-item>
         `
       }
     })
@@ -66,7 +66,7 @@ describe('Slides 组件单元测试', () => {
   })
 
   it('点击第二个就展示第二个', (done) => {
-    Vue.component('mz-slides-item', SlidesItem)
+    Vue.component('m-slides-item', SlidesItem)
     const wrapper = mount(Slides, {
       propsData: {
         autoPlay: false,
@@ -74,15 +74,15 @@ describe('Slides 组件单元测试', () => {
       },
       slots: {
         default: `
-          <mz-slides-item name="1">
+          <m-slides-item name="1">
             <div class="box1">1</div>
-          </mz-slides-item>
-          <mz-slides-item name="2">
+          </m-slides-item>
+          <m-slides-item name="2">
             <div class="box2">2</div>
-          </mz-slides-item>
-          <mz-slides-item name="3">
+          </m-slides-item>
+          <m-slides-item name="3">
             <div class="box3">3</div>
-          </mz-slides-item>
+          </m-slides-item>
         `
       },
       listeners: {
@@ -98,7 +98,7 @@ describe('Slides 组件单元测试', () => {
   })
 
   it('会自动播放', (done) => {
-    Vue.component('mz-slides-item', SlidesItem)
+    Vue.component('m-slides-item', SlidesItem)
     const callback = sinon.fake();
     const wrapper = mount(Slides, {
       propsData: {
@@ -108,15 +108,15 @@ describe('Slides 组件单元测试', () => {
       },
       slots: {
         default: `
-          <mz-slides-item name="1">
+          <m-slides-item name="1">
             <div class="box1">1</div>
-          </mz-slides-item>
-          <mz-slides-item name="2">
+          </m-slides-item>
+          <m-slides-item name="2">
             <div class="box2">2</div>
-          </mz-slides-item>
-          <mz-slides-item name="3">
+          </m-slides-item>
+          <m-slides-item name="3">
             <div class="box3">3</div>
-          </mz-slides-item>
+          </m-slides-item>
         `
       },
       listeners: {
@@ -129,7 +129,7 @@ describe('Slides 组件单元测试', () => {
     }, 21)
   })
   it('可以点击上一张', (done) => {
-    Vue.component('mz-slides-item', SlidesItem)
+    Vue.component('m-slides-item', SlidesItem)
     const callback = sinon.fake();
     const wrapper = mount(Slides, {
       propsData: {
@@ -139,15 +139,15 @@ describe('Slides 组件单元测试', () => {
       },
       slots: {
         default: `
-          <mz-slides-item name="1">
+          <m-slides-item name="1">
             <div class="box1">1</div>
-          </mz-slides-item>
-          <mz-slides-item name="2">
+          </m-slides-item>
+          <m-slides-item name="2">
             <div class="box2">2</div>
-          </mz-slides-item>
-          <mz-slides-item name="3">
+          </m-slides-item>
+          <m-slides-item name="3">
             <div class="box3">3</div>
-          </mz-slides-item>
+          </m-slides-item>
         `
       },
       listeners: {
@@ -161,7 +161,7 @@ describe('Slides 组件单元测试', () => {
     }, 21)
   })
   it('可以点击下一张', (done) => {
-    Vue.component('mz-slides-item', SlidesItem)
+    Vue.component('m-slides-item', SlidesItem)
     const callback = sinon.fake();
     const wrapper = mount(Slides, {
       propsData: {
@@ -171,15 +171,15 @@ describe('Slides 组件单元测试', () => {
       },
       slots: {
         default: `
-          <mz-slides-item name="1">
+          <m-slides-item name="1">
             <div class="box1">1</div>
-          </mz-slides-item>
-          <mz-slides-item name="2">
+          </m-slides-item>
+          <m-slides-item name="2">
             <div class="box2">2</div>
-          </mz-slides-item>
-          <mz-slides-item name="3">
+          </m-slides-item>
+          <m-slides-item name="3">
             <div class="box3">3</div>
-          </mz-slides-item>
+          </m-slides-item>
         `
       },
       listeners: {

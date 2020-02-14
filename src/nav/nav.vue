@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name: 'mz-nav'
+  name: 'm-nav'
 }
 </script>
 <style lang="scss" scoped>

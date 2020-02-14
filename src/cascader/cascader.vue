@@ -5,8 +5,8 @@
       <slot></slot>
     </div>
     <div class="popover-wrapper" v-if="popoverVisible">
-      <mz-cascader-items :items="source" :height="popoverHeight" :selected="selected"
-      @update:selected="onUpdateSelected" :loadData="loadData" :loadingItem="loadingItem"></mz-cascader-items>
+      <m-cascader-items :items="source" :height="popoverHeight" :selected="selected"
+      @update:selected="onUpdateSelected" :loadData="loadData" :loadingItem="loadingItem"></m-cascader-items>
     </div>
   </div>
 </template>
@@ -14,10 +14,10 @@
   import CascaderItems from './cascader-items'
   import ClickOutside from './click-outside'
   export default {
-    name: 'mz-cascader',
+    name: 'm-cascader',
     directives: { ClickOutside },
     components: {
-      'mz-cascader-items': CascaderItems
+      'm-cascader-items': CascaderItems
     },
     props: {
       source: {

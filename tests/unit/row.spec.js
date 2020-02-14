@@ -10,15 +10,15 @@ describe('Row 组件单元测试', () => {
     expect(Row).to.exist
   })
   xit('接收 gutter 属性', (done) => {
-    // Vue.component('mz-row', Row)
-    // Vue.component('mz-col', Col)
+    // Vue.component('m-row', Row)
+    // Vue.component('m-col', Col)
     // const div = document.createElement('div')
     // document.body.appendChild(div)
     // div.innerHTML = `
-    //   <mz-row gutter="20">
-    //     <mz-col span="10"></mz-col>
-    //     <mz-col span="12"></mz-col>
-    //   </mz-row>
+    //   <m-row gutter="20">
+    //     <m-col span="10"></m-col>
+    //     <m-col span="12"></m-col>
+    //   </m-row>
     // `
     // const vm = new Vue({
     //   el: div

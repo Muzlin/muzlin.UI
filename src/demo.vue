@@ -1,31 +1,20 @@
 <template>
   <div class="demo">
-    <mz-slides :selected.sync="selected" width="300px" height="200px" :autoPlay="true">
-      <MzSlidesItem name="0">
-        <div class="box">1</div>
-      </MzSlidesItem>
-      <MzSlidesItem name="1">
-        <div class="box">2</div>
-      </MzSlidesItem>
-      <MzSlidesItem name="2">
-        <div class="box">3</div>
-      </MzSlidesItem>
-      <MzSlidesItem name="3">
-        <div class="box">4</div>
-      </MzSlidesItem>
-    </mz-slides>
+
   </div>
 </template>
 <script>
-  import MzSlides from '../src/slides/slides'
-  import MzSlidesItem from '../src/slides/slides-item'
-  import MzButton from './button/button'
+  import MButton from './button/button'
+  import MNav from './nav/nav'
+  import MNavItem from './nav/nav-item'
+  import MSubNav from './nav/sub-nav'
   export default {
     name: 'demo',
     components: {
-      MzSlides,
-      MzSlidesItem,
-      MzButton
+      MButton,
+      MNav,
+      MNavItem,
+      MSubNav
     },
     data() {
       return {

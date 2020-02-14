@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'mz-layout',
+    name: 'm-layout',
     data () {
       return {
         layoutClass: {
@@ -16,7 +16,7 @@
     },
     mounted () {
       this.$children.forEach(children => {
-        if(children.$options.name === 'mz-sider') {
+        if(children.$options.name === 'm-sider') {
           let { layoutClass } = this
           layoutClass.hasSider = true
         }

@@ -1,7 +1,7 @@
 <template>
-  <button class="mz-button" :class="{[`icon-${position}`]: true}" @click="$emit('click')">
-    <mz-icon class="icon" v-if="icon && !loading" :name="icon"></mz-icon>
-    <mz-icon class="icon loading" v-if="loading" name="loading"></mz-icon>
+  <button class="m-button" :class="{[`icon-${position}`]: true}" @click="$emit('click')">
+    <m-icon class="icon" v-if="icon && !loading" :name="icon"></m-icon>
+    <m-icon class="icon loading" v-if="loading" name="loading"></m-icon>
     <slot></slot>
   </button>
 </template>
@@ -9,9 +9,9 @@
   import Vue from 'vue'
   import Icon from '../icon.vue'
   export default {
-    name: "mz-button",
+    name: "m-button",
     components: {
-      'mz-icon': Icon
+      'm-icon': Icon
     },
     props: {
       icon: {
@@ -34,7 +34,7 @@
 </script>
 <style lang="scss" scoped>
 
-  .mz-button {
+  .m-button {
     height: $button-height;
     font-size: $font-size;
     background: $button-bg;

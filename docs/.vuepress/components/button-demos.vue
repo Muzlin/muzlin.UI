@@ -1,9 +1,9 @@
 <template>
   <div>
-    <mz-button>默认按钮</mz-button>
-    <mz-button icon="setting">默认按钮</mz-button>
-    <mz-button loading>默认按钮</mz-button>
-    <mz-button disabled>默认按钮</mz-button>
+    <m-button>默认按钮</m-button>
+    <m-button icon="setting">默认按钮</m-button>
+    <m-button loading>默认按钮</m-button>
+    <m-button disabled>默认按钮</m-button>
     <pre><code>{{content}}</code></pre>
   </div>
 </template>
@@ -11,14 +11,14 @@
   import Button from '../../../src/button/button'
   export default {
     components: {
-      'mz-button': Button
+      'm-button': Button
     },
     data() {
       return {
-        content: `<mz-button>默认按钮</mz-button>
-        <mz-button icon="setting">默认按钮</mz-button>
-        <mz-button loading>默认按钮</mz-button>
-        <mz-button disabled>默认按钮</mz-button>`.replace(/\t+| +/g, ''),
+        content: `<m-button>默认按钮</m-button>
+        <m-button icon="setting">默认按钮</m-button>
+        <m-button loading>默认按钮</m-button>
+        <m-button disabled>默认按钮</m-button>`.replace(/\t+| +/g, ''),
       }
     }
   }

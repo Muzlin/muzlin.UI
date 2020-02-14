@@ -16,7 +16,7 @@
     setTimeout
   } from 'timers';
   export default {
-    name: 'mz-toast',
+    name: 'm-toast',
     props: {
       duration: {
         type: [String, Number],

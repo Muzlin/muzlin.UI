@@ -5,7 +5,7 @@
 </template>
 <script>
   export default {
-    name: 'mz-row',
+    name: 'm-row',
     props: {
       gutter: {
         type: [String, Number],

@@ -9,7 +9,7 @@
 </template>
 <script>
   export default {
-    name: 'mz-tabs-head',
+    name: 'm-tabs-head',
     inject: ['eventBus'],
     mounted() {
       this.eventBus.$on('update:selected', (name, vm) => {

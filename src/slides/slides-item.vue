@@ -2,13 +2,13 @@
   <div>
     <template v-if="animationEnabled">
       <transition name="slide">
-        <div class="mz-slides-item" v-if="visible" :class="{reverse}">
+        <div class="m-slides-item" v-if="visible" :class="{reverse}">
           <slot></slot>
         </div>
       </transition>
     </template>
     <template v-else>
-      <div class="mz-slides-item" v-if="visible" :class="{reverse}">
+      <div class="m-slides-item" v-if="visible" :class="{reverse}">
         <slot></slot>
       </div>
     </template>
@@ -17,7 +17,7 @@
 
 <script>
   export default {
-    name: 'mz-slides-item',
+    name: 'm-slides-item',
     props: {
       name: {
         type: String,
@@ -43,7 +43,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .mz-slides-item {}
+  .m-slides-item {}
 
   .slide-leave-active {
     position: absolute;

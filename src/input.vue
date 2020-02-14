@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper" :class="{error}">
-    <input :value="value" :disabled="disabled" :readonly="readonly" class="mz-icon" type="text"
+    <input :value="value" :disabled="disabled" :readonly="readonly" class="m-icon" type="text"
       @change="$emit('change', $event.target.value)"
       @input="$emit('input', $event.target.value)"
       @focus="$emit('focus', $event.target.value)"
@@ -15,7 +15,7 @@
 <script>
   import Icon from "./icon"
   export default {
-    name: "mz-input",
+    name: "m-input",
     components: {
       Icon
     },

@@ -9,7 +9,7 @@
 
 <script>
   export default {
-    name: 'mz-sider',
+    name: 'm-sider',
     data() {
       return {
         visible: true

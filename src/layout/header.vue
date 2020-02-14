@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'mz-header'
+    name: 'm-header'
   }
 </script>
 

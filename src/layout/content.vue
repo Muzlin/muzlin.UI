@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'mz-content'
+    name: 'm-content'
   }
 </script>
 

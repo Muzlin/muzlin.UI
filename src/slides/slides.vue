@@ -1,32 +1,32 @@
 <template>
-  <div class="mz-slides" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" @touchstart="onTouchStart"
+  <div class="m-slides" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" @touchstart="onTouchStart"
     @touchend="onTouchEnd">
-    <div class="mz-slides-window" ref="window">
-      <div class="mz-slides-wrapper">
+    <div class="m-slides-window" ref="window">
+      <div class="m-slides-wrapper">
         <slot></slot>
       </div>
     </div>
-    <div class="mz-slides-dots">
+    <div class="m-slides-dots">
       <span @click="onClickPrev" data-action="prev">
-        <mz-icon name="left"></mz-icon>
+        <m-icon name="left"></m-icon>
       </span>
       <span v-for="n in childrenLength" :class="{active: selectedIndex === n-1}" :key="n" :data-index="n-1"
         @click="select(n-1)">
         {{n}}
       </span>
       <span @click="onClickNext" data-action="next">
-        <mz-icon name="right"></mz-icon>
+        <m-icon name="right"></m-icon>
       </span>
     </div>
   </div>
 </template>
 
 <script>
-  import MzIcon from '../icon'
+  import MIcon from '../icon'
   export default {
-    name: 'mz-slides',
+    name: 'm-slides',
     components: {
-      'mz-icon': MzIcon
+      'm-icon': MIcon
     },
     props: {
       selected: {
@@ -71,7 +71,7 @@
         return this.items.map(vm => vm.name)
       },
       items() {
-        return this.$children.filter(vm => vm.$options.name === 'mz-slides-item')
+        return this.$children.filter(vm => vm.$options.name === 'm-slides-item')
       }
     },
     methods: {
@@ -165,7 +165,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .mz-slides {
+  .m-slides {
     &-window {
       overflow: hidden;
     }

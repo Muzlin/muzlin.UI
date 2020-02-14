@@ -1,5 +1,5 @@
 <template>
-  <div class="mz-button-group">
+  <div class="m-button-group">
     <slot></slot>
   </div>
 </template>
@@ -8,7 +8,7 @@
     mounted() {
       for (let node of this.$el.children) {
         if (node.nodeName.toLowerCase() !== 'button') {
-          console.error('mz-button-group 的子元素应为 g-button')
+          console.error('m-button-group 的子元素应为 g-button')
         }
       }
     }
@@ -16,11 +16,11 @@
 </script>
 <style lang="scss" scoped>
 
-  .mz-button-group {
+  .m-button-group {
     display: inline-flex;
     vertical-align: middle;
 
-    >.mz-button {
+    >.m-button {
       border-radius: 0;
 
       &:not(:first-child) {

@@ -8,11 +8,11 @@ import TabsHead from '@/tabs/tabs-head'
 import TabsItem from '@/tabs/tabs-item'
 import TabsBody from '@/tabs/tabs-body'
 import TabsPane from '@/tabs/tabs-pane'
-Vue.component('mz-tabs', Tabs)
-Vue.component('mz-tabs-head', TabsHead)
-Vue.component('mz-tabs-item', TabsItem)
-Vue.component('mz-tabs-body', TabsBody)
-Vue.component('mz-tabs-pane', TabsPane)
+Vue.component('m-tabs', Tabs)
+Vue.component('m-tabs-head', TabsHead)
+Vue.component('m-tabs-item', TabsItem)
+Vue.component('m-tabs-body', TabsBody)
+Vue.component('m-tabs-pane', TabsPane)
 
 Vue.config.productionTip = false
 Vue.config.devtools = false
@@ -26,16 +26,16 @@ describe('Tabs 组件单元测试', () => {
       const div = document.createElement('div')
       document.body.appendChild(div)
       div.innerHTML = `
-        <mz-tabs selected="tab1">
-          <mz-tabs-head>
-            <mz-tabs-item name="tab1">tab1</mz-tabs-item>
-            <mz-tabs-item name="tab2">tab2</mz-tabs-item>
-          </mz-tabs-head>
-          <mz-tabs-body>
-            <mz-tabs-pane name="tab1">tab1 text</mz-tabs-pane>
-            <mz-tabs-pane name="tab2">tab2 text</mz-tabs-pane>
-          </mz-tabs-body>
-        </mz-tabs>
+        <m-tabs selected="tab1">
+          <m-tabs-head>
+            <m-tabs-item name="tab1">tab1</m-tabs-item>
+            <m-tabs-item name="tab2">tab2</m-tabs-item>
+          </m-tabs-head>
+          <m-tabs-body>
+            <m-tabs-pane name="tab1">tab1 text</m-tabs-pane>
+            <m-tabs-pane name="tab2">tab2 text</m-tabs-pane>
+          </m-tabs-body>
+        </m-tabs>
       `
       let vm = new Vue({
         el: div
