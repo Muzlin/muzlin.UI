@@ -4,5 +4,7 @@
     "sider",
     "typeof",
     "vuepress"
-  ]
+  ],
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }
