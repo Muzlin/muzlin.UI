@@ -1,5 +1,5 @@
 <template>
-  <div class="sub-nav"></div>
+  <div class="m-sub-nav"></div>
 </template>
 <script>
 export default {
