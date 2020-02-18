@@ -62,7 +62,9 @@
 </script>
 <style lang="scss" scoped>
   .m-nav {
-    border: 1px solid;
     display: flex;
+    border-bottom: 1px solid $grey;
+    color: $color;
+    cursor: default;
   }
 </style>
