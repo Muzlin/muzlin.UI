@@ -6,6 +6,7 @@
 <script>
 export default {
   name: 'm-nav-item',
+  inject: ['root'],
   props: {
     name: {
       type: String,
@@ -17,6 +18,9 @@ export default {
       selected: false
     }
   },
+  created () {
+    this.root.addItem(this)
+  },
   methods: {
     onClick() {
       this.$emit('add:selected', this.name)
@@ -26,6 +30,7 @@ export default {
 </script>
 <style lang="scss" scoped>
   .m-nav-item{
+    padding: 10px 20px;
     &.selected {
       background: red;
     }

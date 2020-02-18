@@ -6,6 +6,11 @@
 <script>
   export default {
     name: 'm-nav',
+    provide() {
+      return {
+        root: this
+      }
+    },
     props: {
       selected: {
         type: Array,
@@ -16,6 +21,11 @@
         default: false
       }
     },
+    data () {
+      return {
+        items: []
+      }
+    },
     mounted() {
       this.updateChildren()
       this.listenToChildren()
@@ -23,12 +33,10 @@
     updated() {
       this.updateChildren()
     },
-    computed: {
-      items() {
-        return this.$children.filter(vm => vm.$options.name === 'm-nav-item')
-      }
-    },
     methods: {
+      addItem(item) {
+        this.items.push(item)
+      },
       updateChildren() {
         this.items.forEach(vm => {
           vm.selected = this.selected.indexOf(vm.name) > -1
