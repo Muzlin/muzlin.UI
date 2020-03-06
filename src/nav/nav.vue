@@ -14,19 +14,15 @@
     },
     props: {
       selected: {
-        type: Array,
-        default: () => []
-      },
-      multiple: {
-        type: Boolean,
-        default: false
+        type: String,
+        default: () => ''
       },
       vertical: {
         type: Boolean,
         default: false
       }
     },
-    data () {
+    data() {
       return {
         items: [],
         namePath: []
@@ -45,21 +41,13 @@
       },
       updateChildren() {
         this.items.forEach(vm => {
-          vm.selected = this.selected.indexOf(vm.name) > -1
+          vm.selected = this.selected === vm.name
         })
       },
       listenToChildren() {
         this.items.forEach(vm => {
           vm.$on('add:selected', (name) => {
-            if (this.multiple) {
-              if (!this.selected.includes(name)) {
-                let copySelected = JSON.parse(JSON.stringify(this.selected))
-                copySelected.push(name)
-                this.$emit('update:selected', copySelected)
-              }
-            } else {
-              this.$emit('update:selected', [name])
-            }
+            this.$emit('update:selected', name)
           })
         })
       }
@@ -73,6 +61,7 @@
     color: $color;
     cursor: default;
     user-select: none;
+
     &.vertical {
       flex-direction: column;
       border: 1px solid $grey;

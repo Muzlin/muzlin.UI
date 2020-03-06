@@ -109,9 +109,9 @@
       }
     }
 
-    &.vertical {
-      color: $blue;
-    }
+    // &.vertical {
+    //   color: $blue;
+    // }
 
     &-label {
       padding: 10px 20px;
