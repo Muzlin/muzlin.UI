@@ -1,12 +1,12 @@
 <template>
-  <div class="m-nav-item" :class="{selected}" @click="onClick">
+  <div class="m-nav-item" :class="{selected, vertical}" @click="onClick">
     <slot></slot>
   </div>
 </template>
 <script>
   export default {
     name: 'm-nav-item',
-    inject: ['root'],
+    inject: ['root', 'vertical'],
     props: {
       name: {
         type: String,
@@ -35,22 +35,35 @@
     padding: 10px 20px;
     position: relative;
 
-    &.selected {
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        border: 1px solid $blue;
-        width: 100%;
+    &:not(.vertical) {
+      &.selected {
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          border-bottom: 1px solid $blue;
+          width: 100%;
+        }
+      }
+    }
+    &.vertical {
+      &.selected {
+        color: $blue;
       }
     }
   }
 
-  .m-sub-nav .m-nav-item {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .m-sub-nav .m-nav-item:not(.vertical) {
     &.selected {
       color: $color;
       background: $grey;
+
       &::after {
         display: none;
       }

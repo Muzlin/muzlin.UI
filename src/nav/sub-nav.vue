@@ -1,8 +1,8 @@
 <template>
-  <div class="m-sub-nav" :class="{active}" v-click-outside="close">
+  <div class="m-sub-nav" :class="{active, vertical}" v-click-outside="close">
     <span class="m-sub-nav-label" @click="onClick">
       <slot name="title"></slot>
-      <span class="m-sub-nav-icon" :class="{open}">
+      <span class="m-sub-nav-icon" :class="{open, vertical}">
         <m-icon name="right"></m-icon>
       </span>
     </span>
@@ -96,15 +96,21 @@
   .m-sub-nav {
     position: relative;
 
-    &.active {
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        border: 1px solid $blue;
-        width: 100%;
+    &:not(.vertical) {
+      &.active {
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          border: 1px solid $blue;
+          width: 100%;
+        }
       }
+    }
+
+    &.vertical {
+      color: $blue;
     }
 
     &-label {
@@ -169,6 +175,14 @@
 
       &.open {
         transform: rotate(180deg)
+      }
+
+      &.vertical {
+        transform: rotate(90deg);
+
+        &.open {
+          transform: rotate(270deg)
+        }
       }
     }
   }
