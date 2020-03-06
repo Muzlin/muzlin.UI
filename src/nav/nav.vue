@@ -1,5 +1,5 @@
 <template>
-  <div class="m-nav">
+  <div class="m-nav" :class="{vertical}">
     <slot></slot>
   </div>
 </template>
@@ -8,7 +8,8 @@
     name: 'm-nav',
     provide() {
       return {
-        root: this
+        root: this,
+        vertical: this.vertical
       }
     },
     props: {
@@ -19,11 +20,16 @@
       multiple: {
         type: Boolean,
         default: false
+      },
+      vertical: {
+        type: Boolean,
+        default: false
       }
     },
     data () {
       return {
-        items: []
+        items: [],
+        namePath: []
       }
     },
     mounted() {
@@ -66,5 +72,10 @@
     border-bottom: 1px solid $grey;
     color: $color;
     cursor: default;
+    user-select: none;
+    &.vertical {
+      flex-direction: column;
+      border: 1px solid $grey;
+    }
   }
 </style>

@@ -23,6 +23,8 @@
     },
     methods: {
       onClick() {
+        this.root.namePath = []
+        this.$parent && this.$parent.updateNamePath && this.$parent.updateNamePath()
         this.$emit('add:selected', this.name)
       }
     }
@@ -46,9 +48,9 @@
   }
 
   .m-sub-nav .m-nav-item {
-    color: $color-light;
     &.selected {
       color: $color;
+      background: $grey;
       &::after {
         display: none;
       }
