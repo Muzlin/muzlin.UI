@@ -6,11 +6,18 @@
         <m-icon name="right"></m-icon>
       </span>
     </span>
-    <transition @enter="enter" @leave="leave" @after-leave="afterLeave" @after-enter="afterEnter">
-      <div class="m-sub-nav-popover" v-show="open" :class="{vertical}">
+    <template v-if="vertical">
+      <transition @enter="enter" @leave="leave" @after-leave="afterLeave" @after-enter="afterEnter">
+        <div class="m-sub-nav-popover" v-show="open" :class="{vertical}">
+          <slot></slot>
+        </div>
+      </transition>
+    </template>
+    <template v-else>
+      <div class="m-sub-nav-popover" v-show="open">
         <slot></slot>
       </div>
-    </transition>
+    </template>
   </div>
 </template>
 <script>
@@ -43,7 +50,9 @@
     },
     methods: {
       enter(el, done) {
-        const {height} = el.getBoundingClientRect()
+        const {
+          height
+        } = el.getBoundingClientRect()
         el.style.height = 0
         el.getBoundingClientRect()
         el.style.height = `${height}px`
@@ -55,7 +64,9 @@
         el.style.height = 'auto'
       },
       leave(el, done) {
-        const {height} = el.getBoundingClientRect()
+        const {
+          height
+        } = el.getBoundingClientRect()
         el.style.height = `${height}px`
         el.getBoundingClientRect()
         el.style.height = 0
